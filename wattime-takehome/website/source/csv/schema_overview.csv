@@ -1,0 +1,32 @@
+Variable Name,Data Type
+`Year`_,Integer
+`Aggressor_Id`_,Categorical Integer
+`Aggressor_Name`_,String
+`Victim_ID`_,Categorical Integer
+`Victim_Name`_,String
+`Source_Article`_,String
+`Source_Date`_,DateString
+`Source_Headline`_,String
+`Region_Name`_,String
+`Kurdish_Region`_,Boolean
+`Region_Code`_,Categorical
+`Province_Name`_,"String"
+`Province_Code`_,"Categorical"
+`Country`_,String
+`Date_Start`_,String
+`Date_End`_,String
+`Women_Killed`_,Integer
+`Children_Killed`_,Integer
+`Total_Killed`_,Integer
+`Women_Raped`_,Integer
+`Illegal_Imprisonments`_,Integer
+`Illegal_Arrests`_,Integer
+`Illegal_Detentions`_,Integer
+`Human_Rights_Category_Code`_,Categorical
+`Human_Rights_Category_Name`_,String
+`Human_Rights_Offense_Code`_,Categorical
+`Human_Rights_Offense_Name`_,String
+`Is_Women_Event`_,Boolean
+`Is_Children_Event`_,Boolean
+`Description`_,String
+`ID`_,Integer

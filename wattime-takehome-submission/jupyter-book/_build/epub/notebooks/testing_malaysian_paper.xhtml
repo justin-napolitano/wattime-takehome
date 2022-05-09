@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hypothesis Testing the University of Malaysia Paper</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/epub.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="hypothesis-testing-the-university-of-malaysia-paper">
+<h1>Hypothesis Testing the University of Malaysia Paper</h1>
+<div class="section" id="claims">
+<h2>Claims</h2>
+<ul class="simple">
+<li><p>That the distributions do not differ between 2020 and 2019</p></li>
+<li><p>That the means do no differ between 2020 and 2019</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="what-will-be-testing">
+<h1>What will be testing.</h1>
+<ul class="simple">
+<li><p>That the Data are independent and evenly distributed: Test for normality</p>
+<ul>
+<li><p>Shapiro-Wilk Test</p></li>
+</ul>
+</li>
+<li><p>That the means between 2019 and 2020 do not differ: Parametric Statistical Hypothesis Tests</p>
+<ul>
+<li><p>T Test because we have less than 25 observations</p></li>
+</ul>
+</li>
+<li><p>If nonparametirc: That the distributions between 2019 and 2020 do not differ
+Mann-Whitney U Test</p></li>
+</ul>
+<div class="section" id="data-import">
+<h2>Data Import</h2>
+<p>I am importing data again to ensure that our data is valid.  I will move this section to another notebook when the work is completed.  This file must be very large at this point.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/jnapolitano/Projects/wattime-takehome/data/ch4_2015-2021.xlsx&quot;</span>
+
+<span class="n">hypothesis_testing_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="drop-total-row-from-the-data">
+<h2>Drop total row from the data</h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hypothesis_testing_df</span> <span class="o">=</span> <span class="n">hypothesis_testing_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">hypothesis_testing_df</span><span class="p">[</span><span class="s1">&#39;country_name&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Total&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1">#copying to avoid modifying slices in memory.  Old df should also drop from memory in production environment.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hypothesis_testing_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso3_country</th>
+      <th>country_name</th>
+      <th>tCH4_2015</th>
+      <th>tCH4_2016</th>
+      <th>tCH4_2017</th>
+      <th>tCH4_2018</th>
+      <th>tCH4_2019</th>
+      <th>tCH4_2020</th>
+      <th>tCH4_2021</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>2.344420e+06</td>
+      <td>2.278158e+06</td>
+      <td>2.098958e+06</td>
+      <td>2.141231e+06</td>
+      <td>2.070985e+06</td>
+      <td>2.106781e+06</td>
+      <td>1.983974e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>3.410233e+05</td>
+      <td>3.104189e+05</td>
+      <td>3.725173e+05</td>
+      <td>3.717030e+05</td>
+      <td>3.294713e+05</td>
+      <td>4.902874e+05</td>
+      <td>4.544874e+05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>6.133647e+06</td>
+      <td>5.859531e+06</td>
+      <td>6.355071e+06</td>
+      <td>5.413962e+06</td>
+      <td>5.603352e+06</td>
+      <td>6.402353e+06</td>
+      <td>6.068210e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>1.141464e+04</td>
+      <td>1.334803e+04</td>
+      <td>1.217299e+04</td>
+      <td>1.405410e+04</td>
+      <td>1.148324e+04</td>
+      <td>1.305461e+04</td>
+      <td>8.531579e+03</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>1.283649e+06</td>
+      <td>1.023129e+06</td>
+      <td>9.615327e+05</td>
+      <td>1.176982e+06</td>
+      <td>1.266668e+06</td>
+      <td>1.188195e+06</td>
+      <td>1.009936e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>6.219887e+06</td>
+      <td>5.309413e+06</td>
+      <td>6.228451e+06</td>
+      <td>6.589798e+06</td>
+      <td>7.501556e+06</td>
+      <td>7.599764e+06</td>
+      <td>6.567960e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>8.774407e+04</td>
+      <td>9.180121e+04</td>
+      <td>9.620217e+04</td>
+      <td>8.875744e+04</td>
+      <td>9.500199e+04</td>
+      <td>9.600254e+04</td>
+      <td>9.053525e+04</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>4.995968e+04</td>
+      <td>4.937785e+04</td>
+      <td>5.443679e+04</td>
+      <td>4.469902e+04</td>
+      <td>4.566914e+04</td>
+      <td>5.101547e+04</td>
+      <td>5.089759e+04</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>2.305465e+05</td>
+      <td>2.284133e+05</td>
+      <td>2.708935e+05</td>
+      <td>1.548252e+05</td>
+      <td>2.332056e+05</td>
+      <td>2.835167e+05</td>
+      <td>1.574007e+05</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>4.954698e+05</td>
+      <td>5.731698e+05</td>
+      <td>4.517045e+05</td>
+      <td>5.592610e+05</td>
+      <td>5.947277e+05</td>
+      <td>6.412802e+05</td>
+      <td>5.644891e+05</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>1.451878e+05</td>
+      <td>1.274597e+05</td>
+      <td>1.463222e+05</td>
+      <td>1.293543e+05</td>
+      <td>1.327782e+05</td>
+      <td>1.165467e+05</td>
+      <td>1.013006e+05</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>1.661169e+04</td>
+      <td>1.696441e+04</td>
+      <td>1.168063e+04</td>
+      <td>1.009675e+04</td>
+      <td>1.461058e+04</td>
+      <td>2.136270e+04</td>
+      <td>1.475014e+04</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>8.305626e+04</td>
+      <td>1.011743e+05</td>
+      <td>5.911841e+04</td>
+      <td>9.018914e+04</td>
+      <td>8.476088e+04</td>
+      <td>9.248238e+04</td>
+      <td>8.466966e+04</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>1.132082e+06</td>
+      <td>1.290806e+06</td>
+      <td>1.205169e+06</td>
+      <td>1.372447e+06</td>
+      <td>1.256888e+06</td>
+      <td>1.221904e+06</td>
+      <td>1.289837e+06</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>1.057399e+05</td>
+      <td>1.110049e+05</td>
+      <td>1.111291e+05</td>
+      <td>1.066525e+05</td>
+      <td>1.056287e+05</td>
+      <td>1.127141e+05</td>
+      <td>1.069696e+05</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>1.007479e+05</td>
+      <td>6.667161e+04</td>
+      <td>8.081300e+04</td>
+      <td>9.200752e+04</td>
+      <td>1.164235e+05</td>
+      <td>7.168401e+04</td>
+      <td>4.811408e+04</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>4.852431e+05</td>
+      <td>5.945922e+05</td>
+      <td>5.372641e+05</td>
+      <td>4.532297e+05</td>
+      <td>6.528548e+05</td>
+      <td>6.401201e+05</td>
+      <td>4.849205e+05</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>3.432021e+05</td>
+      <td>4.073554e+05</td>
+      <td>3.836830e+05</td>
+      <td>4.175210e+05</td>
+      <td>3.584550e+05</td>
+      <td>4.462836e+05</td>
+      <td>4.383270e+05</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>1.143217e+05</td>
+      <td>9.177653e+04</td>
+      <td>1.085457e+05</td>
+      <td>8.662578e+04</td>
+      <td>9.655062e+04</td>
+      <td>8.581038e+04</td>
+      <td>7.735988e+04</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>1.393798e+06</td>
+      <td>1.780993e+06</td>
+      <td>1.164699e+06</td>
+      <td>9.166575e+05</td>
+      <td>1.305046e+06</td>
+      <td>1.520788e+06</td>
+      <td>8.528673e+05</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>7.866956e+04</td>
+      <td>8.089149e+04</td>
+      <td>8.705634e+04</td>
+      <td>8.138151e+04</td>
+      <td>8.990870e+04</td>
+      <td>8.333327e+04</td>
+      <td>6.619861e+04</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>1.611324e+05</td>
+      <td>1.618576e+05</td>
+      <td>1.684799e+05</td>
+      <td>1.657254e+05</td>
+      <td>1.691351e+05</td>
+      <td>1.941455e+05</td>
+      <td>1.634842e+05</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>1.346013e+06</td>
+      <td>1.483777e+06</td>
+      <td>1.406437e+06</td>
+      <td>1.317455e+06</td>
+      <td>1.269751e+06</td>
+      <td>1.374450e+06</td>
+      <td>1.502787e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="test-for-normality-shapiro-wilk">
+<h2>Test for Normality: Shapiro-Wilk</h2>
+<div class="section" id="id1">
+<h3>2019</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Selecting Malaysia 2019 Data </span>
+<span class="n">data_2019</span> <span class="o">=</span> <span class="n">hypothesis_testing_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2019&#39;</span><span class="p">]</span>
+<span class="n">data_2019</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     2.070985e+06
+1     3.294713e+05
+2     5.603352e+06
+3     1.148324e+04
+4     1.266668e+06
+5     7.501556e+06
+6     9.500199e+04
+7     4.566914e+04
+8     2.332056e+05
+9     5.947277e+05
+10    1.327782e+05
+11    1.461058e+04
+12    8.476088e+04
+13    1.256888e+06
+14    1.056287e+05
+15    1.164235e+05
+16    6.528548e+05
+17    3.584550e+05
+18    9.655062e+04
+19    1.305046e+06
+20    8.990870e+04
+21    1.691351e+05
+22    1.269751e+06
+Name: tCH4_2019, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">data_2019</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">statistic</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">pvalue</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">results</span><span class="o">.</span><span class="n">pvalue</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably Gaussian&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably not Gaussian&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=0.567, p=0.000
+Probably not Gaussian
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="results">
+<h4>Results</h4>
+<p>The distribution is not gausian so a non-paremtric test must be completed.  It is not necessary to perform this test on the 2020 data, but I will do so anyways for practice.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>2020</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Selecting the Malaysia Data 2020</span>
+<span class="n">data_2020</span> <span class="o">=</span> <span class="n">hypothesis_testing_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2020&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">data_2020</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">statistic</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">pvalue</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">results</span><span class="o">.</span><span class="n">pvalue</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably Gaussian&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably not Gaussian&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=0.565, p=0.000
+Probably not Gaussian
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h4>Results</h4>
+<p>The 2020 data is not gausian which verifies that we will need to perform a non parmetric test</p>
+</div>
+</div>
+</div>
+<div class="section" id="independence-of-samples">
+<h2>Independence of Samples.</h2>
+<p>We have to assume that the samples are independent of each other as we know they are dependent on hecatares.<br />
+Though the correlations are rather high this is due to the smiliarity of hectares per year.  Thus the amount of ch4 is similiar</p>
+</div>
+<div class="section" id="distribution-similiarity">
+<h2>Distribution Similiarity</h2>
+<div class="section" id="mann-whitney-u-test">
+<h3>Mann-Whitney U Test</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of the Mann-Whitney U Test</span>
+
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">data_2019</span><span class="p">,</span> <span class="n">data_2020</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=266.000, p=0.982
+Probably the same distribution
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="kruskal-wallis-test">
+<h2>Kruskal Wallis test</h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kruskal</span><span class="p">(</span><span class="n">data_2019</span><span class="p">,</span> <span class="n">data_2020</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=0.001, p=0.974
+Probably the same distribution
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="friedman-test">
+<h2>Friedman Test</h2>
+<p>Just for the sake of it I will compare data across all distributions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of the Friedman Test</span>
+<span class="c1">#data_2014 = hypothesis_testing_df[&#39;tCH4_2014&#39;]</span>
+<span class="n">data_2015</span> <span class="o">=</span> <span class="n">hypothesis_testing_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2015&#39;</span><span class="p">]</span>
+<span class="n">data_2016</span> <span class="o">=</span> <span class="n">hypothesis_testing_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2016&#39;</span><span class="p">]</span>
+<span class="n">data_2017</span> <span class="o">=</span> <span class="n">hypothesis_testing_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2017&#39;</span><span class="p">]</span>
+<span class="n">data_2018</span> <span class="o">=</span> <span class="n">hypothesis_testing_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2018&#39;</span><span class="p">]</span>
+
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">friedmanchisquare</span><span class="p">(</span><span class="n">data_2015</span><span class="p">,</span> <span class="n">data_2016</span><span class="p">,</span> <span class="n">data_2017</span><span class="p">,</span> <span class="n">data_2018</span><span class="p">,</span> <span class="n">data_2019</span><span class="p">,</span> <span class="n">data_2020</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stat=</span><span class="si">%.3f</span><span class="s1">, p=</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably the same distribution&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probably different distributions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat=11.472, p=0.043
+Probably different distributions
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Results.</h3>
+<p>Some distributions differ from one another.  Which those are have yet to be discovered.  For the sake of this analysis I will not attempt to identify them.</p>
+<p>The statment that the distributions of the 2019 and 2020 data do not differ cannot differ.  That said we also cannot claim that the means are statistically equivalent as the data is not parametric.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "venv"
+        },
+        kernelOptions: {
+            kernelName: "venv",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'venv'</script>
+
+            <div class="clearer"></div>
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

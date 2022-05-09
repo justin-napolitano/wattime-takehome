@@ -1,0 +1,706 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Watt Time Take Home" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="index.html" />
+  <meta property="og:description" content="Blog Posts: Blog Posts: Are we undercounting Global Methane Emissions?- Measuring Paddy Rice CH4 Emissions, The Data- Python Libraries Import, Data Import, CH4 Data, Data Differences, CH4 Relative ..." />
+  
+    <title>Watt Time Take Home &#8212; freight.jnapolitano.io</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/FAVICON.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Are we undercounting Global Methane Emissions?" href="notebooks/short_post.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+     
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="parts/journal/posts/atom.xml"
+  title="Blog"
+/>
+ 
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Watt Time Take Home
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Blog Posts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/short_post.html">
+   Are we undercounting Global Methane Emissions?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analysis of the University of Malaysia Paper
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/replicating_paper.html">
+   Replicating the University of Malysia Paper.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/testing_malaysian_paper.html">
+   Hypothesis Testing the University of Malaysia Paper
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Exploration
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/data_exploration.html">
+   Emissions Estimation Data: A Comparison between FAOSTAT and University of Malysia Estimates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/geo_coding.html">
+   Shape Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tables and Indices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/index.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/justin-napolitano/cv"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blog-posts">
+   Blog Posts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analysis-of-the-university-of-malaysia-paper">
+   Analysis of The University of Malaysia Paper
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-exploration">
+   Data Exploration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tables-and-indices">
+   Tables and Indices
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Watt Time Take Home</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blog-posts">
+   Blog Posts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analysis-of-the-university-of-malaysia-paper">
+   Analysis of The University of Malaysia Paper
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-exploration">
+   Data Exploration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tables-and-indices">
+   Tables and Indices
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="watt-time-take-home">
+<h1>Watt Time Take Home<a class="headerlink" href="#watt-time-take-home" title="Permalink to this headline">¶</a>
+</h1>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+<div class="section" id="blog-posts">
+<h2>Blog Posts<a class="headerlink" href="#blog-posts" title="Permalink to this headline">¶</a>
+</h2>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Blog Posts</span></p>
+<ul>
+<li class="toctree-l1">
+<a class="reference internal" href="notebooks/short_post.html">Are we undercounting Global Methane Emissions?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/short_post.html#measuring-paddy-rice-ch4-emissions">Measuring Paddy Rice CH4 Emissions</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/short_post.html#the-data">The Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/short_post.html#python-libraries-import">Python Libraries Import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/short_post.html#data-import">Data Import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/short_post.html#ch4-data">CH4 Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/short_post.html#data-differences">Data Differences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/short_post.html#ch4-relative-percent-differences-plot">CH4 Relative Percent Differences Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/short_post.html#percent-difference-map">Percent Difference Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/short_post.html#discusion-of-aggregated-data-points">Discusion of Aggregated Data Points</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/short_post.html#which-report-should-we-rely-upon">Which Report should We Rely Upon?</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/short_post.html#what-about-co2-equivalency">What about CO2 Equivalency?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/short_post.html#insights-from-the-data">Insights from the Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/short_post.html#tonnes-c02-2015-2019-trace">Tonnes C02 2015 - 2019 TRACE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/short_post.html#co2-tonnage-map-trace">CO2 Tonnage Map TRACE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/short_post.html#conclusions">Conclusions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="analysis-of-the-university-of-malaysia-paper">
+<h2>Analysis of The University of Malaysia Paper<a class="headerlink" href="#analysis-of-the-university-of-malaysia-paper" title="Permalink to this headline">¶</a>
+</h2>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analysis of the University of Malaysia Paper</span></p>
+<ul>
+<li class="toctree-l1">
+<a class="reference internal" href="notebooks/replicating_paper.html">Replicating the University of Malysia Paper.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/replicating_paper.html#imports">Imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/replicating_paper.html#university-of-malaysia-data">University of Malaysia Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/replicating_paper.html#faostat-data-2019">FAOSTAT Data 2019</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/replicating_paper.html#merging-data-on-iso3-country-code">Merging Data on Iso3 Country Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#calculate-difference-in-tonnes-between-the-estimates">Calculate difference in Tonnes Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#calculating-the-percent-differences-between-the-estimates">Calculating the Percent Differences Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#tonnes-ch4-faostat-trace-plot">Tonnes CH4 FAOSTAT - TRACE Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#percent-difference-faostat-trace">Percent Difference FAOSTAT - TRACE</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/replicating_paper.html#recreating-the-malysia-paper-with-2018-data">Recreating the Malysia Paper with 2018 Data.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#id1">University of Malaysia Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/replicating_paper.html#faostat-data-2018">FAOSTAT Data 2018</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/replicating_paper.html#id2">Merging Data on Iso3 Country Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#id3">Calculate difference in Tonnes Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#id4">Calculating the Percent Differences Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#id5">Tonnes CH4 FAOSTAT - TRACE Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#id6">Percent Difference FAOSTAT - TRACE</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/replicating_paper.html#recreating-the-malysia-paper-same-year">Recreating the Malysia Paper same year</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#id7">University of Malaysia Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/replicating_paper.html#id8">FAOSTAT Data 2018</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/replicating_paper.html#id9">Merging Data on Iso3 Country Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#id10">Calculate difference in Tonnes Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#id11">Calculating the Percent Differences Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#id12">Tonnes CH4 FAOSTAT - TRACE Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#id13">Percent Difference FAOSTAT - TRACE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/replicating_paper.html#impressions">Impressions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="notebooks/testing_malaysian_paper.html">Hypothesis Testing the University of Malaysia Paper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/testing_malaysian_paper.html#claims">Claims</a></li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="notebooks/testing_malaysian_paper.html#what-will-be-testing">What will be testing.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/testing_malaysian_paper.html#data-import">Data Import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/testing_malaysian_paper.html#drop-total-row-from-the-data">Drop total row from the data</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/testing_malaysian_paper.html#test-for-normality-shapiro-wilk">Test for Normality: Shapiro-Wilk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/testing_malaysian_paper.html#id1">2019</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/testing_malaysian_paper.html#id2">2020</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/testing_malaysian_paper.html#independence-of-samples">Independence of Samples.</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/testing_malaysian_paper.html#distribution-similiarity">Distribution Similiarity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/testing_malaysian_paper.html#mann-whitney-u-test">Mann-Whitney U Test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/testing_malaysian_paper.html#kruskal-wallis-test">Kruskal Wallis test</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/testing_malaysian_paper.html#friedman-test">Friedman Test</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/testing_malaysian_paper.html#id4">Results.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-exploration">
+<h2>Data Exploration<a class="headerlink" href="#data-exploration" title="Permalink to this headline">¶</a>
+</h2>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Exploration</span></p>
+<ul>
+<li class="toctree-l1">
+<a class="reference internal" href="notebooks/data_exploration.html">Emissions Estimation Data: A Comparison between FAOSTAT and University of Malysia Estimates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/data_exploration.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#plan">Plan</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#data-imports">Data Imports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#import-data-frames">Import Data Frames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#experiment-with-plots-for-each-set">Experiment with Plots for each Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#calculate-differences-between-the-datasets">Calculate differences between the datasets</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#university-of-malaysia-emission-estimates">University of Malaysia Emission Estimates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#print-df-head">Print Df Head</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#calculate-co2-equivalency">Calculate Co2 Equivalency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#calculate-means">Calculate Means</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="notebooks/data_exploration.html#calculate-means-and-totals-across-rows">Calculate Means and Totals Across Rows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/data_exploration.html#write-data-to-file">Write Data to File</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#plots">Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#university-of-malaysia-bar-plot">University of Malaysia Bar Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#university-of-malaysia-density-plot">University of Malaysia Density Plot</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#faostat-data">FAOSTAT Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#print-faostat-data">Print FAOSTAT Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#drop-fao-country-code">Drop Fao Country Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id1">Calculate Co2 Equivalency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id2">Calculate Means</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id3">Calculate Means and Totals Across Rows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#faostat-data-to-file">FAOSTAT Data to File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#faostat-plots">FaoSTAT PLOTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#faostat-density-plot">FAOSTAT Density Plot</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#join-df-s-by-iso3-country">Join Df’s by ISO3 Country</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#drop-totals-and-means-from-the-original-df">Drop totals and means from the original df.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#dropping-2020-and-2021-from-the-data-sets">Dropping 2020 and 2021 from the data sets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#calculate-difference-in-ch4-tonnes-between-the-estimates">Calculate difference in Ch4 Tonnes Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#calculate-difference-in-c02-tonnes-between-the-estimates">Calculate difference in C02 Tonnes Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#calculating-the-ch4-percent-differences-between-the-estimates">Calculating the CH4 Percent Differences Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#calculate-co2-differences">Calculate CO2 Differences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#recalculate-means">Recalculate Means</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#recalculate-totals">Recalculate Totals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#merged-data-to-file">Merged Data to File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#co2-difference-plots">CO2 Difference Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#percent-difference-plot">Percent Difference Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#impressions">Impressions</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#recreating-the-malysia-paper">Recreating the Malysia Paper.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#university-of-malaysia-data">University of Malaysia Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/data_exploration.html#faostat-data-2019">FAOSTAT Data 2019</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#merging-data-on-iso3-country-code">Merging Data on Iso3 Country Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#calculate-difference-in-tonnes-between-the-estimates">Calculate difference in Tonnes Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#calculating-the-percent-differences-between-the-estimates">Calculating the Percent Differences Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#tonnes-ch4-faostat-trace-plot">Tonnes CH4 FAOSTAT - TRACE Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#percent-difference-faostat-trace">Percent Difference FAOSTAT - TRACE</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#recreating-the-malysia-paper-with-2018-data">Recreating the Malysia Paper with 2018 Data.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id4">University of Malaysia Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/data_exploration.html#faostat-data-2018">FAOSTAT Data 2018</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#id5">Merging Data on Iso3 Country Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id6">Calculate difference in Tonnes Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id7">Calculating the Percent Differences Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id8">Tonnes CH4 FAOSTAT - TRACE Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id9">Percent Difference FAOSTAT - TRACE</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#recreating-the-malysia-paper-same-year">Recreating the Malysia Paper same year</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id10">University of Malaysia Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/data_exploration.html#id11">FAOSTAT Data 2018</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#id12">Merging Data on Iso3 Country Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id13">Calculate difference in Tonnes Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id14">Calculating the Percent Differences Between the Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id15">Tonnes CH4 FAOSTAT - TRACE Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id16">Percent Difference FAOSTAT - TRACE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#id17">Impressions</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#hypothesis-testing-the-malaysian-data">Hypothesis Testing the Malaysian Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#claims">Claims</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="notebooks/data_exploration.html#what-will-be-testing">What will be testing.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#data-import">Data Import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#drop-total-row-from-the-data">Drop total row from the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#test-for-normality-shapiro-wilk">Test for Normality: Shapiro-Wilk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#independence-of-samples">Independence of Samples.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#distribution-similiarity">Distribution Similiarity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#kruskal-wallis-test">Kruskal Wallis test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/data_exploration.html#friedman-test">Friedman Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/geo_coding.html">Shape Data</a></li>
+<li class="toctree-l1">
+<a class="reference internal" href="notebooks/geo_coding.html#faostat-data">FAOSTAT DATA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/geo_coding.html#faostat-country-merge">FAOSTAT Country Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/geo_coding.html#faostat-merge-to-file">FAOSTAT Merge to File</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/geo_coding.html#trace-data">TRACE Data</a></li>
+<li class="toctree-l1">
+<a class="reference internal" href="notebooks/geo_coding.html#trace-country-merge">TRACE Country Merge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/geo_coding.html#trace-merge-to-file">Trace Merge to File</a></li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="notebooks/geo_coding.html#merge-geo-data">Merge GEO DATA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/geo_coding.html#merged-countries-to-file">Merged Countries to File</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tables-and-indices">
+<h2>Tables and Indices<a class="headerlink" href="#tables-and-indices" title="Permalink to this headline">¶</a>
+</h2>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tables and Indices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    
+<script>kernelName = 'python3'</script>
+
+<div class="section">
+   
+</div>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="notebooks/short_post.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Are we undercounting Global Methane Emissions?</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Justin Napolitano<br/>
+    
+        &copy; Copyright 2022, Justin Napolitano.<br/>
+      Last updated on Apr 18, 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

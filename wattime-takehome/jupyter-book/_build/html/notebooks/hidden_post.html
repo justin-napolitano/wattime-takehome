@@ -1,0 +1,1564 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Are We Undercounting Global Methane Emissions? (No Code Example) &#8212; Measuring Global Rice Paddy CH4 Emissions</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/android-chrome-512x512.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Are We Undercounting Global Methane Emissions? (Code Example)" href="full_post.html" />
+    <link rel="prev" title="Introduction" href="../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Measuring Global Rice Paddy CH4 Emissions</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Blog Posts
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Are We Undercounting Global Methane Emissions? (No Code Example)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="full_post.html">
+   Are We Undercounting Global Methane Emissions? (Code Example)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analysis of The University of Malaysia Paper
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="replicating_paper.html">
+   Replicating the University of Malysia Paper.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testing_malaysian_paper.html">
+   Hypothesis Testing the University of Malaysia Paper
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Exploration
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration.html">
+   Emissions Estimation Data: A Comparison between FAOSTAT and University of Malysia Estimates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="geo_coding.html">
+   Merging TRACE and FAOSTAT Data with Geographic Data for Mapping
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/hidden_post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/justin-napolitano/ch4-emissions"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/justin-napolitano/ch4-emissions/issues/new?title=Issue%20on%20page%20%2Fnotebooks/hidden_post.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/justin-napolitano/ch4-emissions/master?urlpath=tree/docs/notebooks/hidden_post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-are-rice-paddy-emissions-measured">
+   How are Rice Paddy Emissions Measured?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differences-between-faostat-and-trace-estimates">
+   Differences between FAOSTAT and TRACE Estimates.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-review">
+     Data Review
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methane-emissions-data-2015-2019">
+     Methane Emissions Data 2015 - 2019
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#methane-emissions-insights">
+       Methane Emissions Insights
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#major-differences-between-faostat-and-trace-for-certain-countries">
+     Major Differences Between FAOSTAT and TRACE for Certain Countries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#faostat-under-estimation-in-brazil-china-india-and-bangledesh">
+     FAOSTAT Under Estimation in Brazil China, India, and Bangledesh.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-case-for-climate-trace-estimates">
+   The Case for Climate Trace Estimates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimating-co2-equivalency">
+   Estimating CO2 Equivalency
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tonnes-c02-2015-2019-trace-estimations">
+     Tonnes C02 2015 - 2019 TRACE Estimations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#co2-data-insights">
+       CO2 Data Insights
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-worst-offenders-are-the-most-dependent-on-rice-cultivation">
+       The Worst Offenders are the Most Dependent on Rice Cultivation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   Conclusions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#faostat-likely-undercounts-emissions">
+     FAOSTAT Likely Undercounts Emissions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#countries-should-attempt-to-reduce-methane-emssions">
+     Countries Should Attempt to Reduce Methane Emssions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Are We Undercounting Global Methane Emissions? (No Code Example)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-are-rice-paddy-emissions-measured">
+   How are Rice Paddy Emissions Measured?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differences-between-faostat-and-trace-estimates">
+   Differences between FAOSTAT and TRACE Estimates.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-review">
+     Data Review
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methane-emissions-data-2015-2019">
+     Methane Emissions Data 2015 - 2019
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#methane-emissions-insights">
+       Methane Emissions Insights
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#major-differences-between-faostat-and-trace-for-certain-countries">
+     Major Differences Between FAOSTAT and TRACE for Certain Countries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#faostat-under-estimation-in-brazil-china-india-and-bangledesh">
+     FAOSTAT Under Estimation in Brazil China, India, and Bangledesh.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-case-for-climate-trace-estimates">
+   The Case for Climate Trace Estimates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimating-co2-equivalency">
+   Estimating CO2 Equivalency
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tonnes-c02-2015-2019-trace-estimations">
+     Tonnes C02 2015 - 2019 TRACE Estimations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#co2-data-insights">
+       CO2 Data Insights
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-worst-offenders-are-the-most-dependent-on-rice-cultivation">
+       The Worst Offenders are the Most Dependent on Rice Cultivation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   Conclusions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#faostat-likely-undercounts-emissions">
+     FAOSTAT Likely Undercounts Emissions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#countries-should-attempt-to-reduce-methane-emssions">
+     Countries Should Attempt to Reduce Methane Emssions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="are-we-undercounting-global-methane-emissions-no-code-example">
+<h1>Are We Undercounting Global Methane Emissions? (No Code Example)<a class="headerlink" href="#are-we-undercounting-global-methane-emissions-no-code-example" title="Permalink to this headline">¶</a></h1>
+<p>According to the United Nations Environment Program “methane is the primary contributor to the formation of ground-level ozone.” Over 20 years, “it is 80 times more potent at warming than carbon dioxide.” <a class="reference external" href="https://www.unep.org/news-and-stories/story/methane-emissions-are-driving-climate-change-heres-how-reduce-them">(UNEP)</a>.  In fact, one kilogram of CH4 produced is equivalent to 25 kilograms of CO2 <a class="reference external" href="https://ecometrica.com/assets/GHGs-CO2-CO2e-and-Carbon-What-Do-These-Mean-v2.1.pdf">(Econometra)</a>.</p>
+<p>The agricultural industry is the primary producer of methane emissions globally.  While the cattle industry is a well known culprit, paddy rice cultivation accounts for another 8 per cent of human linked emissions <a class="reference external" href="https://www.unep.org/news-and-stories/story/.methane-emissions-are-driving-climate-change-heres-how-reduce-them">(UNEP)</a>.</p>
+<div class="section" id="how-are-rice-paddy-emissions-measured">
+<h2>How are Rice Paddy Emissions Measured?<a class="headerlink" href="#how-are-rice-paddy-emissions-measured" title="Permalink to this headline">¶</a></h2>
+<p>Methane estimates are calcuated by multipling the hecatares of rice paddy in cultivation by a conversion factor.</p>
+<p>The Food and Agricultural Organization of the United Nations <a class="reference external" href="https://www.fao.org/faostat/en/">(FAOSTAT)</a> is the most trusted provider of methane emission estimates.  The accuracy of their data however, can be questioned as the organization relies upon official government sources which may be manipulated.</p>
+<p>Climate TRACE <a class="reference external" href="https://www.climatetrace.org">(Climate TRACE)</a> on the other hand estimates emission levels by calculating the area of cultivated paddies with satellite imaging.   While this method may undercount small fields and cultivation at higher altitudes, the metric does not rely upon possibly manipulated sources. This should result in more accurate predictions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is important to note that FAOSTAT and TRACE estimate emissions with different conversion factors.</p>
+</div>
+</div>
+<div class="section" id="differences-between-faostat-and-trace-estimates">
+<h2>Differences between FAOSTAT and TRACE Estimates.<a class="headerlink" href="#differences-between-faostat-and-trace-estimates" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-review">
+<h3>Data Review<a class="headerlink" href="#data-review" title="Permalink to this headline">¶</a></h3>
+<p>We will be reviewing the data provided by FAOSTAT and TRACE.  The dataframe imported was prepared for this post.  You may review the documentation <a class="reference internal" href="data_exploration.html#data-exploration-title"><span class="std std-ref">here</span></a>.</p>
+</div>
+<div class="section" id="methane-emissions-data-2015-2019">
+<h3>Methane Emissions Data 2015 - 2019<a class="headerlink" href="#methane-emissions-data-2015-2019" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country_name_FAOSTAT</th>
+      <th>continent</th>
+      <th>CH4_abs_percent_diff_totals</th>
+      <th>CH4_relative_percent_diff_totals</th>
+      <th>CH4_diff_totals</th>
+      <th>2015</th>
+      <th>tCH4_2015</th>
+      <th>2016</th>
+      <th>tCH4_2016</th>
+      <th>2017</th>
+      <th>tCH4_2017</th>
+      <th>2017</th>
+      <th>tCH4_2017</th>
+      <th>2018</th>
+      <th>tCH4_2018</th>
+      <th>2019</th>
+      <th>tCH4_2019</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bangladesh</td>
+      <td>Asia</td>
+      <td>63.425917</td>
+      <td>-92.881337</td>
+      <td>-5.265110e+06</td>
+      <td>1131293.4</td>
+      <td>2.344420e+06</td>
+      <td>1.093480e+06</td>
+      <td>2.278158e+06</td>
+      <td>1.154531e+06</td>
+      <td>2.098958e+06</td>
+      <td>1.154531e+06</td>
+      <td>2.098958e+06</td>
+      <td>1.144591e+06</td>
+      <td>2.141231e+06</td>
+      <td>1.144745e+06</td>
+      <td>2.070985e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brazil</td>
+      <td>South America</td>
+      <td>93.222402</td>
+      <td>-174.610414</td>
+      <td>-1.096923e+06</td>
+      <td>138910.3</td>
+      <td>3.410233e+05</td>
+      <td>1.262782e+05</td>
+      <td>3.104189e+05</td>
+      <td>1.303229e+05</td>
+      <td>3.725173e+05</td>
+      <td>1.303229e+05</td>
+      <td>3.725173e+05</td>
+      <td>1.216152e+05</td>
+      <td>3.717030e+05</td>
+      <td>1.110848e+05</td>
+      <td>3.294713e+05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>China</td>
+      <td>Asia</td>
+      <td>9.421813</td>
+      <td>-9.887609</td>
+      <td>-2.642293e+06</td>
+      <td>5406593.9</td>
+      <td>6.133647e+06</td>
+      <td>5.399920e+06</td>
+      <td>5.859531e+06</td>
+      <td>5.400129e+06</td>
+      <td>6.355071e+06</td>
+      <td>5.400129e+06</td>
+      <td>6.355071e+06</td>
+      <td>5.302173e+06</td>
+      <td>5.413962e+06</td>
+      <td>5.214455e+06</td>
+      <td>5.603352e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Spain</td>
+      <td>Europe</td>
+      <td>124.705066</td>
+      <td>76.811284</td>
+      <td>2.069382e+05</td>
+      <td>55082.2</td>
+      <td>1.141464e+04</td>
+      <td>5.507310e+04</td>
+      <td>1.334803e+04</td>
+      <td>5.423240e+04</td>
+      <td>1.217299e+04</td>
+      <td>5.423240e+04</td>
+      <td>1.217299e+04</td>
+      <td>5.292500e+04</td>
+      <td>1.405410e+04</td>
+      <td>5.209850e+04</td>
+      <td>1.148324e+04</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Indonesia</td>
+      <td>Asia</td>
+      <td>70.153790</td>
+      <td>51.936188</td>
+      <td>6.172158e+06</td>
+      <td>2407953.5</td>
+      <td>1.283649e+06</td>
+      <td>2.387656e+06</td>
+      <td>1.023129e+06</td>
+      <td>2.425291e+06</td>
+      <td>9.615327e+05</td>
+      <td>2.425291e+06</td>
+      <td>9.615327e+05</td>
+      <td>2.405614e+06</td>
+      <td>1.176982e+06</td>
+      <td>2.257604e+06</td>
+      <td>1.266668e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>India</td>
+      <td>Asia</td>
+      <td>32.086209</td>
+      <td>-38.217479</td>
+      <td>-8.806357e+06</td>
+      <td>4580248.4</td>
+      <td>6.219887e+06</td>
+      <td>4.559136e+06</td>
+      <td>5.309413e+06</td>
+      <td>4.620791e+06</td>
+      <td>6.228451e+06</td>
+      <td>4.620791e+06</td>
+      <td>6.228451e+06</td>
+      <td>4.661155e+06</td>
+      <td>6.589798e+06</td>
+      <td>4.621417e+06</td>
+      <td>7.501556e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Iran (Islamic Republic of)</td>
+      <td>Asia</td>
+      <td>13.260902</td>
+      <td>12.436318</td>
+      <td>6.526191e+04</td>
+      <td>116486.7</td>
+      <td>8.774407e+04</td>
+      <td>1.310085e+05</td>
+      <td>9.180121e+04</td>
+      <td>8.723360e+04</td>
+      <td>9.620217e+04</td>
+      <td>8.723360e+04</td>
+      <td>9.620217e+04</td>
+      <td>9.393660e+04</td>
+      <td>8.875744e+04</td>
+      <td>9.610340e+04</td>
+      <td>9.500199e+04</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Italy</td>
+      <td>Europe</td>
+      <td>80.187551</td>
+      <td>57.238482</td>
+      <td>3.267972e+05</td>
+      <td>114574.8</td>
+      <td>4.995968e+04</td>
+      <td>1.180030e+05</td>
+      <td>4.937785e+04</td>
+      <td>1.180030e+05</td>
+      <td>5.443679e+04</td>
+      <td>1.180030e+05</td>
+      <td>5.443679e+04</td>
+      <td>1.094638e+05</td>
+      <td>4.469902e+04</td>
+      <td>1.108951e+05</td>
+      <td>4.566914e+04</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Japan</td>
+      <td>Asia</td>
+      <td>36.874729</td>
+      <td>31.134372</td>
+      <td>5.053990e+05</td>
+      <td>330353.1</td>
+      <td>2.305465e+05</td>
+      <td>3.264030e+05</td>
+      <td>2.284133e+05</td>
+      <td>3.237003e+05</td>
+      <td>2.708935e+05</td>
+      <td>3.237003e+05</td>
+      <td>2.708935e+05</td>
+      <td>3.222450e+05</td>
+      <td>1.548252e+05</td>
+      <td>3.205818e+05</td>
+      <td>2.332056e+05</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Cambodia</td>
+      <td>Asia</td>
+      <td>14.304565</td>
+      <td>-15.406481</td>
+      <td>-3.570168e+05</td>
+      <td>436826.0</td>
+      <td>4.954698e+05</td>
+      <td>4.590031e+05</td>
+      <td>5.731698e+05</td>
+      <td>4.737453e+05</td>
+      <td>4.517045e+05</td>
+      <td>4.737453e+05</td>
+      <td>4.517045e+05</td>
+      <td>4.793627e+05</td>
+      <td>5.592610e+05</td>
+      <td>4.683789e+05</td>
+      <td>5.947277e+05</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Korea (the Republic of)</td>
+      <td>Asia</td>
+      <td>15.813819</td>
+      <td>14.655057</td>
+      <td>1.169559e+05</td>
+      <td>167862.2</td>
+      <td>1.451878e+05</td>
+      <td>1.635341e+05</td>
+      <td>1.274597e+05</td>
+      <td>1.584897e+05</td>
+      <td>1.463222e+05</td>
+      <td>1.584897e+05</td>
+      <td>1.463222e+05</td>
+      <td>1.549113e+05</td>
+      <td>1.293543e+05</td>
+      <td>1.532609e+05</td>
+      <td>1.327782e+05</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>Asia</td>
+      <td>145.627378</td>
+      <td>84.268427</td>
+      <td>3.747725e+05</td>
+      <td>94826.8</td>
+      <td>1.661169e+04</td>
+      <td>9.563000e+04</td>
+      <td>1.696441e+04</td>
+      <td>9.394070e+04</td>
+      <td>1.168063e+04</td>
+      <td>9.394070e+04</td>
+      <td>1.168063e+04</td>
+      <td>8.333360e+04</td>
+      <td>1.009675e+04</td>
+      <td>7.700550e+04</td>
+      <td>1.461058e+04</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Sri Lanka</td>
+      <td>Asia</td>
+      <td>27.569003</td>
+      <td>24.229137</td>
+      <td>1.337589e+05</td>
+      <td>132640.0</td>
+      <td>8.305626e+04</td>
+      <td>1.217563e+05</td>
+      <td>1.011743e+05</td>
+      <td>8.445630e+04</td>
+      <td>5.911841e+04</td>
+      <td>8.445630e+04</td>
+      <td>5.911841e+04</td>
+      <td>1.110490e+05</td>
+      <td>9.018914e+04</td>
+      <td>1.021563e+05</td>
+      <td>8.476088e+04</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Myanmar</td>
+      <td>Asia</td>
+      <td>14.697380</td>
+      <td>-15.863111</td>
+      <td>-8.567154e+05</td>
+      <td>1059409.6</td>
+      <td>1.132082e+06</td>
+      <td>1.052288e+06</td>
+      <td>1.290806e+06</td>
+      <td>1.087030e+06</td>
+      <td>1.205169e+06</td>
+      <td>1.087030e+06</td>
+      <td>1.205169e+06</td>
+      <td>1.118850e+06</td>
+      <td>1.372447e+06</td>
+      <td>1.083100e+06</td>
+      <td>1.256888e+06</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Malaysia</td>
+      <td>Asia</td>
+      <td>13.043224</td>
+      <td>12.244674</td>
+      <td>7.536891e+04</td>
+      <td>121942.6</td>
+      <td>1.057399e+05</td>
+      <td>1.232328e+05</td>
+      <td>1.110049e+05</td>
+      <td>1.226563e+05</td>
+      <td>1.111291e+05</td>
+      <td>1.226563e+05</td>
+      <td>1.111291e+05</td>
+      <td>1.252385e+05</td>
+      <td>1.066525e+05</td>
+      <td>1.224538e+05</td>
+      <td>1.056287e+05</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Nepal</td>
+      <td>Asia</td>
+      <td>50.437328</td>
+      <td>40.279401</td>
+      <td>3.080032e+05</td>
+      <td>149262.2</td>
+      <td>1.007479e+05</td>
+      <td>1.427237e+05</td>
+      <td>6.667161e+04</td>
+      <td>1.625746e+05</td>
+      <td>8.081300e+04</td>
+      <td>1.625746e+05</td>
+      <td>8.081300e+04</td>
+      <td>1.538908e+05</td>
+      <td>9.200752e+04</td>
+      <td>1.562154e+05</td>
+      <td>1.164235e+05</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Pakistan</td>
+      <td>Asia</td>
+      <td>31.154530</td>
+      <td>-36.903009</td>
+      <td>-7.340502e+05</td>
+      <td>383529.3</td>
+      <td>4.852431e+05</td>
+      <td>3.813618e+05</td>
+      <td>5.945922e+05</td>
+      <td>4.060833e+05</td>
+      <td>5.372641e+05</td>
+      <td>4.060833e+05</td>
+      <td>5.372641e+05</td>
+      <td>3.934042e+05</td>
+      <td>4.532297e+05</td>
+      <td>4.247551e+05</td>
+      <td>6.528548e+05</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Philippines (the)</td>
+      <td>Asia</td>
+      <td>121.748165</td>
+      <td>75.679166</td>
+      <td>5.944023e+06</td>
+      <td>1557810.6</td>
+      <td>3.432021e+05</td>
+      <td>1.524292e+06</td>
+      <td>4.073554e+05</td>
+      <td>1.609862e+06</td>
+      <td>3.836830e+05</td>
+      <td>1.609862e+06</td>
+      <td>3.836830e+05</td>
+      <td>1.606048e+06</td>
+      <td>4.175210e+05</td>
+      <td>1.556226e+06</td>
+      <td>3.584550e+05</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>Asia</td>
+      <td>17.492669</td>
+      <td>-19.169278</td>
+      <td>-8.007815e+04</td>
+      <td>82823.3</td>
+      <td>1.143217e+05</td>
+      <td>8.344230e+04</td>
+      <td>9.177653e+04</td>
+      <td>8.459620e+04</td>
+      <td>1.085457e+05</td>
+      <td>8.459620e+04</td>
+      <td>1.085457e+05</td>
+      <td>8.394330e+04</td>
+      <td>8.662578e+04</td>
+      <td>8.293700e+04</td>
+      <td>9.655062e+04</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Thailand</td>
+      <td>Asia</td>
+      <td>22.551331</td>
+      <td>20.266184</td>
+      <td>1.667678e+06</td>
+      <td>1554254.0</td>
+      <td>1.393798e+06</td>
+      <td>1.703328e+06</td>
+      <td>1.780993e+06</td>
+      <td>1.714466e+06</td>
+      <td>1.164699e+06</td>
+      <td>1.714466e+06</td>
+      <td>1.164699e+06</td>
+      <td>1.702989e+06</td>
+      <td>9.166575e+05</td>
+      <td>1.553836e+06</td>
+      <td>1.305046e+06</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Taiwan (Province of China)</td>
+      <td>Asia</td>
+      <td>52.458032</td>
+      <td>-71.109302</td>
+      <td>-1.736733e+05</td>
+      <td>45838.7</td>
+      <td>7.866956e+04</td>
+      <td>4.983830e+04</td>
+      <td>8.089149e+04</td>
+      <td>4.999120e+04</td>
+      <td>8.705634e+04</td>
+      <td>4.999120e+04</td>
+      <td>8.705634e+04</td>
+      <td>4.941410e+04</td>
+      <td>8.138151e+04</td>
+      <td>4.915200e+04</td>
+      <td>8.990870e+04</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>United States of America (the)</td>
+      <td>North America</td>
+      <td>78.850049</td>
+      <td>56.553728</td>
+      <td>1.075629e+06</td>
+      <td>364728.0</td>
+      <td>1.611324e+05</td>
+      <td>4.386620e+05</td>
+      <td>1.618576e+05</td>
+      <td>3.362555e+05</td>
+      <td>1.684799e+05</td>
+      <td>3.362555e+05</td>
+      <td>1.684799e+05</td>
+      <td>4.121775e+05</td>
+      <td>1.657254e+05</td>
+      <td>3.501365e+05</td>
+      <td>1.691351e+05</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Viet Nam</td>
+      <td>Asia</td>
+      <td>0.902428</td>
+      <td>-0.906518</td>
+      <td>-6.129998e+04</td>
+      <td>1381744.4</td>
+      <td>1.346013e+06</td>
+      <td>1.365174e+06</td>
+      <td>1.483777e+06</td>
+      <td>1.360552e+06</td>
+      <td>1.406437e+06</td>
+      <td>1.360552e+06</td>
+      <td>1.406437e+06</td>
+      <td>1.336231e+06</td>
+      <td>1.317455e+06</td>
+      <td>1.318431e+06</td>
+      <td>1.269751e+06</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>mean</td>
+      <td>None</td>
+      <td>49.129925</td>
+      <td>3.599038</td>
+      <td>-1.348162e+05</td>
+      <td>948478.0</td>
+      <td>9.871116e+05</td>
+      <td>9.522272e+05</td>
+      <td>9.587863e+05</td>
+      <td>9.590840e+05</td>
+      <td>9.727103e+05</td>
+      <td>9.590840e+05</td>
+      <td>9.727103e+05</td>
+      <td>9.575896e+05</td>
+      <td>9.475920e+05</td>
+      <td>9.316100e+05</td>
+      <td>1.017605e+06</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>total</td>
+      <td>None</td>
+      <td>1129.988279</td>
+      <td>82.777881</td>
+      <td>-3.100772e+06</td>
+      <td>21814994.0</td>
+      <td>2.270357e+07</td>
+      <td>2.190123e+07</td>
+      <td>2.205208e+07</td>
+      <td>2.205893e+07</td>
+      <td>2.237234e+07</td>
+      <td>2.205893e+07</td>
+      <td>2.237234e+07</td>
+      <td>2.202456e+07</td>
+      <td>2.179462e+07</td>
+      <td>2.142703e+07</td>
+      <td>2.340491e+07</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="methane-emissions-insights">
+<h4>Methane Emissions Insights<a class="headerlink" href="#methane-emissions-insights" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>FAOSTAT underestimated by about 2.8 percent in comparison to TRACE.</p></li>
+<li><p>FAOSTAT undestimated a total of 3,100,772 tonnes of methane over a 5 year period.</p></li>
+</ul>
+<p>Let’s review the bar chart below to better understand the data.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Relative Percent Global CH4 Emissions 2015 - 2019&#39;}, ylabel=&#39;Country Name&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/hidden_post_13_1.png" src="../_images/hidden_post_13_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="major-differences-between-faostat-and-trace-for-certain-countries">
+<h3>Major Differences Between FAOSTAT and TRACE for Certain Countries<a class="headerlink" href="#major-differences-between-faostat-and-trace-for-certain-countries" title="Permalink to this headline">¶</a></h3>
+<p>FaoSTAT methods underestimate nearly as often as they overestimate; however, large producer such as Brazil, Bangladesh, China, and India generate large amounts of emissions not considered by FAOSTAT.</p>
+<p>The following map illustrates these differences well.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/hidden_post_16_0.png" src="../_images/hidden_post_16_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="faostat-under-estimation-in-brazil-china-india-and-bangledesh">
+<h3>FAOSTAT Under Estimation in Brazil China, India, and Bangledesh.<a class="headerlink" href="#faostat-under-estimation-in-brazil-china-india-and-bangledesh" title="Permalink to this headline">¶</a></h3>
+<p>Brazil’s emissions are greatly undercounted over the 5 year period. A factor greater than the difference in emission conversion factors would predict.  Rice Paddies in cultivation may be hidden from satellites by tree cover or altitude.   China, India, and Bangladesh too differ, but at a smaller scale. It is likely that the TRACE data are nearly equivalent to the FAOSTAT data for these contries.</p>
+</div>
+</div>
+<div class="section" id="the-case-for-climate-trace-estimates">
+<h2>The Case for Climate Trace Estimates<a class="headerlink" href="#the-case-for-climate-trace-estimates" title="Permalink to this headline">¶</a></h2>
+<p>The TRACE and the FAOSTAT methods could both erroneously estimate methane emissions.  Climate Trace’s advantage is that hecatares of cultivation are estimated from satellite imaging as opposed to government reports.  The result of which is a falsifiable report supported by empirical evidence. When calculating the CO2 equivalency of CH4 emissions it is safer to use the TRACE data because the data collection methodology is rigorous.</p>
+</div>
+<div class="section" id="estimating-co2-equivalency">
+<h2>Estimating CO2 Equivalency<a class="headerlink" href="#estimating-co2-equivalency" title="Permalink to this headline">¶</a></h2>
+<p>CH4 can be converted to CO2 equivalent by multiplying the 1 kilogram of CH4 by 25 <a class="reference external" href="https://ecometrica.com/assets/GHGs-CO2-CO2e-and-Carbon-What-Do-These-Mean-v2.1.pdf">(Econometra)</a>.  The dataframe below has been precalculated view the documentation <a class="reference internal" href="data_exploration.html#data-exploration-title"><span class="std std-ref">here</span></a>.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All differences are recorded as FAOSTAT - TRACE.</p>
+</div>
+<div class="section" id="tonnes-c02-2015-2019-trace-estimations">
+<h3>Tonnes C02 2015 - 2019 TRACE Estimations<a class="headerlink" href="#tonnes-c02-2015-2019-trace-estimations" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country_name_TRACE</th>
+      <th>CO2_abs_percent_diff_totals</th>
+      <th>CO2_relative_percent_diff_totals</th>
+      <th>CO2_diff_totals</th>
+      <th>tCO2_2015_TRACE</th>
+      <th>tCO2_2016_TRACE</th>
+      <th>tCO2_2017_TRACE</th>
+      <th>tCO2_2018_TRACE</th>
+      <th>tCO2_2019_TRACE</th>
+      <th>Means</th>
+      <th>Totals</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bangladesh</td>
+      <td>63.425917</td>
+      <td>-92.881337</td>
+      <td>-1.316277e+08</td>
+      <td>5.861049e+07</td>
+      <td>5.695395e+07</td>
+      <td>5.247394e+07</td>
+      <td>5.353076e+07</td>
+      <td>5.177463e+07</td>
+      <td>1.771450e+07</td>
+      <td>2.733438e+08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brazil</td>
+      <td>93.222402</td>
+      <td>-174.610414</td>
+      <td>-2.742306e+07</td>
+      <td>8.525583e+06</td>
+      <td>7.760473e+06</td>
+      <td>9.312934e+06</td>
+      <td>9.292575e+06</td>
+      <td>8.236783e+06</td>
+      <td>1.963150e+06</td>
+      <td>4.312835e+07</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>China</td>
+      <td>9.421813</td>
+      <td>-9.887609</td>
+      <td>-6.605732e+07</td>
+      <td>1.533412e+08</td>
+      <td>1.464883e+08</td>
+      <td>1.588768e+08</td>
+      <td>1.353491e+08</td>
+      <td>1.400838e+08</td>
+      <td>8.351022e+07</td>
+      <td>7.341391e+08</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Spain</td>
+      <td>124.705066</td>
+      <td>76.811284</td>
+      <td>5.173455e+06</td>
+      <td>2.853661e+05</td>
+      <td>3.337007e+05</td>
+      <td>3.043248e+05</td>
+      <td>3.513524e+05</td>
+      <td>2.870810e+05</td>
+      <td>8.419352e+05</td>
+      <td>1.561825e+06</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Indonesia</td>
+      <td>70.153790</td>
+      <td>51.936188</td>
+      <td>1.543040e+08</td>
+      <td>3.209122e+07</td>
+      <td>2.557824e+07</td>
+      <td>2.403832e+07</td>
+      <td>2.942454e+07</td>
+      <td>3.166670e+07</td>
+      <td>3.713789e+07</td>
+      <td>1.427990e+08</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>India</td>
+      <td>32.086209</td>
+      <td>-38.217479</td>
+      <td>-2.201589e+08</td>
+      <td>1.554972e+08</td>
+      <td>1.327353e+08</td>
+      <td>1.557113e+08</td>
+      <td>1.647450e+08</td>
+      <td>1.875389e+08</td>
+      <td>7.200858e+07</td>
+      <td>7.962276e+08</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Iran (Islamic Republic of)</td>
+      <td>13.260902</td>
+      <td>12.436318</td>
+      <td>1.631548e+06</td>
+      <td>2.193602e+06</td>
+      <td>2.295030e+06</td>
+      <td>2.405054e+06</td>
+      <td>2.218936e+06</td>
+      <td>2.375050e+06</td>
+      <td>1.639906e+06</td>
+      <td>1.148767e+07</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Italy</td>
+      <td>80.187551</td>
+      <td>57.238482</td>
+      <td>8.169930e+06</td>
+      <td>1.248992e+06</td>
+      <td>1.234446e+06</td>
+      <td>1.360920e+06</td>
+      <td>1.117475e+06</td>
+      <td>1.141729e+06</td>
+      <td>1.784204e+06</td>
+      <td>6.103562e+06</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Japan</td>
+      <td>36.874729</td>
+      <td>31.134372</td>
+      <td>1.263498e+07</td>
+      <td>5.763662e+06</td>
+      <td>5.710333e+06</td>
+      <td>6.772337e+06</td>
+      <td>3.870631e+06</td>
+      <td>5.830141e+06</td>
+      <td>5.072769e+06</td>
+      <td>2.794710e+07</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Cambodia</td>
+      <td>14.304565</td>
+      <td>-15.406481</td>
+      <td>-8.925421e+06</td>
+      <td>1.238675e+07</td>
+      <td>1.432925e+07</td>
+      <td>1.129261e+07</td>
+      <td>1.398153e+07</td>
+      <td>1.486819e+07</td>
+      <td>7.241612e+06</td>
+      <td>6.685832e+07</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Korea (the Republic of)</td>
+      <td>15.813819</td>
+      <td>14.655057</td>
+      <td>2.923897e+06</td>
+      <td>3.629695e+06</td>
+      <td>3.186493e+06</td>
+      <td>3.658056e+06</td>
+      <td>3.233858e+06</td>
+      <td>3.319455e+06</td>
+      <td>2.493936e+06</td>
+      <td>1.702756e+07</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>145.627378</td>
+      <td>84.268427</td>
+      <td>9.369313e+06</td>
+      <td>4.152924e+05</td>
+      <td>4.241102e+05</td>
+      <td>2.920158e+05</td>
+      <td>2.524186e+05</td>
+      <td>3.652645e+05</td>
+      <td>1.389831e+06</td>
+      <td>1.749102e+06</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Sri Lanka</td>
+      <td>27.569003</td>
+      <td>24.229137</td>
+      <td>3.343972e+06</td>
+      <td>2.076407e+06</td>
+      <td>2.529358e+06</td>
+      <td>1.477960e+06</td>
+      <td>2.254728e+06</td>
+      <td>2.119022e+06</td>
+      <td>1.725187e+06</td>
+      <td>1.045748e+07</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Myanmar</td>
+      <td>14.697380</td>
+      <td>-15.863111</td>
+      <td>-2.141788e+07</td>
+      <td>2.830206e+07</td>
+      <td>3.227014e+07</td>
+      <td>3.012923e+07</td>
+      <td>3.431117e+07</td>
+      <td>3.142221e+07</td>
+      <td>1.687712e+07</td>
+      <td>1.564348e+08</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Malaysia</td>
+      <td>13.043224</td>
+      <td>12.244674</td>
+      <td>1.884223e+06</td>
+      <td>2.643498e+06</td>
+      <td>2.775123e+06</td>
+      <td>2.778227e+06</td>
+      <td>2.666313e+06</td>
+      <td>2.640717e+06</td>
+      <td>1.923516e+06</td>
+      <td>1.350388e+07</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Nepal</td>
+      <td>50.437328</td>
+      <td>40.279401</td>
+      <td>7.700079e+06</td>
+      <td>2.518697e+06</td>
+      <td>1.666790e+06</td>
+      <td>2.020325e+06</td>
+      <td>2.300188e+06</td>
+      <td>2.910588e+06</td>
+      <td>2.389595e+06</td>
+      <td>1.141659e+07</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Pakistan</td>
+      <td>31.154530</td>
+      <td>-36.903009</td>
+      <td>-1.835125e+07</td>
+      <td>1.213108e+07</td>
+      <td>1.486480e+07</td>
+      <td>1.343160e+07</td>
+      <td>1.133074e+07</td>
+      <td>1.632137e+07</td>
+      <td>6.216042e+06</td>
+      <td>6.807960e+07</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Philippines (the)</td>
+      <td>121.748165</td>
+      <td>75.679166</td>
+      <td>1.486006e+08</td>
+      <td>8.580052e+06</td>
+      <td>1.018389e+07</td>
+      <td>9.592074e+06</td>
+      <td>1.043803e+07</td>
+      <td>8.961374e+06</td>
+      <td>2.454452e+07</td>
+      <td>4.775541e+07</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>17.492669</td>
+      <td>-19.169278</td>
+      <td>-2.001954e+06</td>
+      <td>2.858041e+06</td>
+      <td>2.294413e+06</td>
+      <td>2.713641e+06</td>
+      <td>2.165645e+06</td>
+      <td>2.413765e+06</td>
+      <td>1.305444e+06</td>
+      <td>1.244551e+07</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Thailand</td>
+      <td>22.551331</td>
+      <td>20.266184</td>
+      <td>4.169196e+07</td>
+      <td>3.484495e+07</td>
+      <td>4.452483e+07</td>
+      <td>2.911748e+07</td>
+      <td>2.291644e+07</td>
+      <td>3.262615e+07</td>
+      <td>2.571523e+07</td>
+      <td>1.640298e+08</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Taiwan (Province of China)</td>
+      <td>52.458032</td>
+      <td>-71.109302</td>
+      <td>-4.341833e+06</td>
+      <td>1.966739e+06</td>
+      <td>2.022287e+06</td>
+      <td>2.176408e+06</td>
+      <td>2.034538e+06</td>
+      <td>2.247717e+06</td>
+      <td>7.632299e+05</td>
+      <td>1.044769e+07</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>United States of America (the)</td>
+      <td>78.850049</td>
+      <td>56.553728</td>
+      <td>2.689073e+07</td>
+      <td>4.028310e+06</td>
+      <td>4.046440e+06</td>
+      <td>4.211999e+06</td>
+      <td>4.143136e+06</td>
+      <td>4.228377e+06</td>
+      <td>5.943640e+06</td>
+      <td>2.065826e+07</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Viet Nam</td>
+      <td>0.902428</td>
+      <td>-0.906518</td>
+      <td>-1.532499e+06</td>
+      <td>3.365033e+07</td>
+      <td>3.709441e+07</td>
+      <td>3.516092e+07</td>
+      <td>3.293637e+07</td>
+      <td>3.174377e+07</td>
+      <td>2.113166e+07</td>
+      <td>1.705858e+08</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>mean</td>
+      <td>49.129925</td>
+      <td>3.599038</td>
+      <td>-3.370404e+06</td>
+      <td>2.467779e+07</td>
+      <td>2.396966e+07</td>
+      <td>2.431776e+07</td>
+      <td>2.368980e+07</td>
+      <td>2.544012e+07</td>
+      <td>1.484060e+07</td>
+      <td>1.220951e+08</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>total</td>
+      <td>1129.988279</td>
+      <td>82.777881</td>
+      <td>-7.751930e+07</td>
+      <td>5.675891e+08</td>
+      <td>5.513021e+08</td>
+      <td>5.593084e+08</td>
+      <td>5.448654e+08</td>
+      <td>5.851228e+08</td>
+      <td>3.413337e+08</td>
+      <td>2.808188e+09</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note a mean of 561,637,600 tonnes CO2equiv produced between annualy 2015 - 2019.</p>
+</div>
+<div class="section" id="co2-data-insights">
+<h4>CO2 Data Insights<a class="headerlink" href="#co2-data-insights" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Total difference in 3,370,404 tonnes of CO2equiv between the FAOSTAT and TRACE data.</p></li>
+<li><p>TRACE reports 2,808,188,000 Tonnes of CO2equiv produced between 2015 to 2019.</p></li>
+<li><p>There is a relative percent difference of -2.8 percent.</p></li>
+</ul>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Global Tonnes CO2 Emissions 2015 - 2019&#39;}, ylabel=&#39;Country Name&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/hidden_post_29_1.png" src="../_images/hidden_post_29_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="the-worst-offenders-are-the-most-dependent-on-rice-cultivation">
+<h4>The Worst Offenders are the Most Dependent on Rice Cultivation<a class="headerlink" href="#the-worst-offenders-are-the-most-dependent-on-rice-cultivation" title="Permalink to this headline">¶</a></h4>
+<p>The worst offenders are China, India, and Bangladesh.  These states struggle with feeding their massive populations.  Including CO2equiv in carbon goals may harm the people of these countries.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/hidden_post_32_0.png" src="../_images/hidden_post_32_0.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Values in billions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="faostat-likely-undercounts-emissions">
+<h3>FAOSTAT Likely Undercounts Emissions<a class="headerlink" href="#faostat-likely-undercounts-emissions" title="Permalink to this headline">¶</a></h3>
+<p>The TRACE data set on average reports about 2.8 percent more methane emissions than the FAOSTAT data set.  This equates to a total methane emmissions estimates difference of 3,100,772 tonnes over a 5 year period.  The CO2equiv over that same period is 77,519,300 tonnes.  Neither value is negligible.</p>
+</div>
+<div class="section" id="countries-should-attempt-to-reduce-methane-emssions">
+<h3>Countries Should Attempt to Reduce Methane Emssions<a class="headerlink" href="#countries-should-attempt-to-reduce-methane-emssions" title="Permalink to this headline">¶</a></h3>
+<p>The 20 and 100 year warming potentials for methane emsission are 84 and 28 [(WG1AR5_Chapter08, Pg 73)].  These factors will impact our climate if nothing is done.  Unfortunately, the countries that produce the most methane from rice cultivation are also those most dependent on the grain.  To make the change, realistic solutions must be provided to feed people culturally and geographically dependent on rice cultivation.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "venv"
+        },
+        kernelOptions: {
+            kernelName: "venv",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'venv'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="full_post.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Are We Undercounting Global Methane Emissions? (Code Example)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Justin Napolitano<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

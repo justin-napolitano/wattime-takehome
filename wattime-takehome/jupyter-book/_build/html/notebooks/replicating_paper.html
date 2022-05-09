@@ -1,0 +1,3874 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Replicating the University of Malysia Paper. &#8212; Measuring Global Rice Paddy CH4 Emissions</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/android-chrome-512x512.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hypothesis Testing the University of Malaysia Paper" href="testing_malaysian_paper.html" />
+    <link rel="prev" title="Are We Undercounting Global Methane Emissions? (Code Example)" href="full_post.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Measuring Global Rice Paddy CH4 Emissions</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Blog Posts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hidden_post.html">
+   Are We Undercounting Global Methane Emissions? (No Code Example)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="full_post.html">
+   Are We Undercounting Global Methane Emissions? (Code Example)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analysis of The University of Malaysia Paper
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Replicating the University of Malysia Paper.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testing_malaysian_paper.html">
+   Hypothesis Testing the University of Malaysia Paper
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Exploration
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration.html">
+   Emissions Estimation Data: A Comparison between FAOSTAT and University of Malysia Estimates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="geo_coding.html">
+   Merging TRACE and FAOSTAT Data with Geographic Data for Mapping
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/replicating_paper.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/justin-napolitano/ch4-emissions"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/justin-napolitano/ch4-emissions/issues/new?title=Issue%20on%20page%20%2Fnotebooks/replicating_paper.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/justin-napolitano/ch4-emissions/master?urlpath=tree/docs/notebooks/replicating_paper.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#university-of-malaysia-data">
+   University of Malaysia Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faostat-data-2019">
+   FAOSTAT Data 2019
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merging-data-on-iso3-country-code">
+   Merging Data on Iso3 Country Code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-difference-in-tonnes-between-the-estimates">
+     Calculate difference in Tonnes Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-percent-differences-between-the-estimates">
+     Calculating the Percent Differences Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tonnes-ch4-faostat-trace-plot">
+     Tonnes CH4 FAOSTAT - TRACE Plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#percent-difference-faostat-trace">
+     Percent Difference FAOSTAT - TRACE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recreating-the-malysia-paper-with-2018-data">
+   Recreating the Malysia Paper with 2018 Data.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     University of Malaysia Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faostat-data-2018">
+   FAOSTAT Data 2018
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Merging Data on Iso3 Country Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Calculate difference in Tonnes Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Calculating the Percent Differences Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Tonnes CH4 FAOSTAT - TRACE Plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Percent Difference FAOSTAT - TRACE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recreating-the-malysia-paper-same-year">
+   Recreating the Malysia Paper same year
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     University of Malaysia Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   FAOSTAT Data 2018
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Merging Data on Iso3 Country Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Calculate difference in Tonnes Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Calculating the Percent Differences Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Tonnes CH4 FAOSTAT - TRACE Plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Percent Difference FAOSTAT - TRACE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#impressions">
+   Impressions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Replicating the University of Malysia Paper.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#university-of-malaysia-data">
+   University of Malaysia Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faostat-data-2019">
+   FAOSTAT Data 2019
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merging-data-on-iso3-country-code">
+   Merging Data on Iso3 Country Code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-difference-in-tonnes-between-the-estimates">
+     Calculate difference in Tonnes Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-the-percent-differences-between-the-estimates">
+     Calculating the Percent Differences Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tonnes-ch4-faostat-trace-plot">
+     Tonnes CH4 FAOSTAT - TRACE Plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#percent-difference-faostat-trace">
+     Percent Difference FAOSTAT - TRACE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recreating-the-malysia-paper-with-2018-data">
+   Recreating the Malysia Paper with 2018 Data.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     University of Malaysia Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faostat-data-2018">
+   FAOSTAT Data 2018
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Merging Data on Iso3 Country Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Calculate difference in Tonnes Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Calculating the Percent Differences Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Tonnes CH4 FAOSTAT - TRACE Plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Percent Difference FAOSTAT - TRACE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recreating-the-malysia-paper-same-year">
+   Recreating the Malysia Paper same year
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     University of Malaysia Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   FAOSTAT Data 2018
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Merging Data on Iso3 Country Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Calculate difference in Tonnes Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Calculating the Percent Differences Between the Estimates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Tonnes CH4 FAOSTAT - TRACE Plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Percent Difference FAOSTAT - TRACE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#impressions">
+   Impressions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="replicating-the-university-of-malysia-paper">
+<h1>Replicating the University of Malysia Paper.<a class="headerlink" href="#replicating-the-university-of-malysia-paper" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="university-of-malaysia-data">
+<h2>University of Malaysia Data<a class="headerlink" href="#university-of-malaysia-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/jnapolitano/Projects/wattime-takehome/data/ch4_2015-2021.xlsx&quot;</span>
+
+<span class="n">malaysia_emissions_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Selecting 2020 columns</span>
+<span class="n">malaysia_2020</span> <span class="o">=</span> <span class="n">malaysia_emissions_df</span><span class="p">[[</span><span class="s2">&quot;iso3_country&quot;</span><span class="p">,</span><span class="s2">&quot;country_name&quot;</span><span class="p">,</span> <span class="s2">&quot;tCH4_2020&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">malaysia_2020</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso3_country</th>
+      <th>country_name</th>
+      <th>tCH4_2020</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>2.106781e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>4.902874e+05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>6.402353e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>1.305461e+04</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>1.188195e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>7.599764e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>9.600254e+04</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>5.101547e+04</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>2.835167e+05</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>6.412802e+05</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>1.165467e+05</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>2.136270e+04</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>9.248238e+04</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>1.221904e+06</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>1.127141e+05</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>7.168401e+04</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>6.401201e+05</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>4.462836e+05</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>8.581038e+04</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>1.520788e+06</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>8.333327e+04</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>1.941455e+05</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>1.374450e+06</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>2.485387e+07</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="faostat-data-2019">
+<h2>FAOSTAT Data 2019<a class="headerlink" href="#faostat-data-2019" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/jnapolitano/Projects/wattime-takehome/data/emissions_csv_fao_emiss_csv_ch4_fao_2015_2019_tonnes.xlsx&quot;</span>
+
+<span class="n">faostat_emissions_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faostat_2019</span> <span class="o">=</span> <span class="n">faostat_emissions_df</span><span class="p">[[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;country_fao&#39;</span><span class="p">,</span> <span class="mi">2019</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faostat_2019</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>code</th>
+      <th>country</th>
+      <th>country_fao</th>
+      <th>2019</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>Bangladesh</td>
+      <td>1144745.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>111084.8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>China, mainland</td>
+      <td>5214454.7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>52098.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>Indonesia</td>
+      <td>2257604.3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>India</td>
+      <td>4621416.8</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>96103.4</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>110895.1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>Japan</td>
+      <td>320581.8</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>Cambodia</td>
+      <td>468378.9</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>Republic of Korea</td>
+      <td>153260.9</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>Lao People's Democratic Republic</td>
+      <td>77005.5</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>Sri Lanka</td>
+      <td>102156.3</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>Myanmar</td>
+      <td>1083100.3</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>Malaysia</td>
+      <td>122453.8</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>Nepal</td>
+      <td>156215.4</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>Pakistan</td>
+      <td>424755.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>Philippines</td>
+      <td>1556225.8</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>Democratic People's Republic of Korea</td>
+      <td>82937.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>Thailand</td>
+      <td>1553835.5</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>China, Taiwan Province of</td>
+      <td>49152.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>United States of America</td>
+      <td>350136.5</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>Viet Nam</td>
+      <td>1318431.1</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>23446028.9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faostat_2019</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;iso3_country&quot;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="merging-data-on-iso3-country-code">
+<h2>Merging Data on Iso3 Country Code<a class="headerlink" href="#merging-data-on-iso3-country-code" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span> <span class="o">=</span> <span class="n">faostat_2019</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">malaysia_2020</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;iso3_country&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso3_country</th>
+      <th>country</th>
+      <th>country_fao</th>
+      <th>2019</th>
+      <th>country_name</th>
+      <th>tCH4_2020</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>Bangladesh</td>
+      <td>1144745.4</td>
+      <td>Bangladesh</td>
+      <td>2.106781e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>111084.8</td>
+      <td>Brazil</td>
+      <td>4.902874e+05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>China, mainland</td>
+      <td>5214454.7</td>
+      <td>China</td>
+      <td>6.402353e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>52098.5</td>
+      <td>Spain</td>
+      <td>1.305461e+04</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>Indonesia</td>
+      <td>2257604.3</td>
+      <td>Indonesia</td>
+      <td>1.188195e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>India</td>
+      <td>4621416.8</td>
+      <td>India</td>
+      <td>7.599764e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>96103.4</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>9.600254e+04</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>110895.1</td>
+      <td>Italy</td>
+      <td>5.101547e+04</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>Japan</td>
+      <td>320581.8</td>
+      <td>Japan</td>
+      <td>2.835167e+05</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>Cambodia</td>
+      <td>468378.9</td>
+      <td>Cambodia</td>
+      <td>6.412802e+05</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>Republic of Korea</td>
+      <td>153260.9</td>
+      <td>Korea (the Republic of)</td>
+      <td>1.165467e+05</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>Lao People's Democratic Republic</td>
+      <td>77005.5</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>2.136270e+04</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>Sri Lanka</td>
+      <td>102156.3</td>
+      <td>Sri Lanka</td>
+      <td>9.248238e+04</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>Myanmar</td>
+      <td>1083100.3</td>
+      <td>Myanmar</td>
+      <td>1.221904e+06</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>Malaysia</td>
+      <td>122453.8</td>
+      <td>Malaysia</td>
+      <td>1.127141e+05</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>Nepal</td>
+      <td>156215.4</td>
+      <td>Nepal</td>
+      <td>7.168401e+04</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>Pakistan</td>
+      <td>424755.1</td>
+      <td>Pakistan</td>
+      <td>6.401201e+05</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>Philippines</td>
+      <td>1556225.8</td>
+      <td>Philippines (the)</td>
+      <td>4.462836e+05</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>Democratic People's Republic of Korea</td>
+      <td>82937.0</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>8.581038e+04</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>Thailand</td>
+      <td>1553835.5</td>
+      <td>Thailand</td>
+      <td>1.520788e+06</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>China, Taiwan Province of</td>
+      <td>49152.0</td>
+      <td>Taiwan (Province of China)</td>
+      <td>8.333327e+04</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>United States of America</td>
+      <td>350136.5</td>
+      <td>United States of America (the)</td>
+      <td>1.941455e+05</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>Viet Nam</td>
+      <td>1318431.1</td>
+      <td>Viet Nam</td>
+      <td>1.374450e+06</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>23446028.9</td>
+      <td>Total</td>
+      <td>2.485387e+07</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="calculate-difference-in-tonnes-between-the-estimates">
+<h3>Calculate difference in Tonnes Between the Estimates<a class="headerlink" href="#calculate-difference-in-tonnes-between-the-estimates" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate Difference in tons</span>
+<span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;diff_2020&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged2020_df</span><span class="p">[</span><span class="mi">2019</span><span class="p">]</span> <span class="o">-</span> <span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2020&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculating-the-percent-differences-between-the-estimates">
+<h3>Calculating the Percent Differences Between the Estimates<a class="headerlink" href="#calculating-the-percent-differences-between-the-estimates" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;abs_percent_diff_2020&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">merged2020_df</span><span class="p">[</span><span class="mi">2019</span><span class="p">]</span> <span class="o">-</span> <span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2020&#39;</span><span class="p">]))</span><span class="o">/</span><span class="p">(</span><span class="n">merged2020_df</span><span class="p">[</span><span class="mi">2019</span><span class="p">]</span> <span class="o">+</span> <span class="n">merged2020_df</span><span class="p">[</span><span class="s2">&quot;tCH4_2020&quot;</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+
+<span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;relative_percent_diff_2020&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">merged2020_df</span><span class="p">[</span><span class="mi">2019</span><span class="p">]</span> <span class="o">-</span> <span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2020&#39;</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">merged2020_df</span><span class="p">[</span><span class="mi">2019</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso3_country</th>
+      <th>country</th>
+      <th>country_fao</th>
+      <th>2019</th>
+      <th>country_name</th>
+      <th>tCH4_2020</th>
+      <th>diff_2020</th>
+      <th>abs_percent_diff_2020</th>
+      <th>relative_percent_diff_2020</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>Bangladesh</td>
+      <td>1144745.4</td>
+      <td>Bangladesh</td>
+      <td>2.106781e+06</td>
+      <td>-9.620360e+05</td>
+      <td>14.793604</td>
+      <td>-84.039294</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>111084.8</td>
+      <td>Brazil</td>
+      <td>4.902874e+05</td>
+      <td>-3.792026e+05</td>
+      <td>31.528112</td>
+      <td>-341.363191</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>China, mainland</td>
+      <td>5214454.7</td>
+      <td>China</td>
+      <td>6.402353e+06</td>
+      <td>-1.187898e+06</td>
+      <td>5.112843</td>
+      <td>-22.780874</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>52098.5</td>
+      <td>Spain</td>
+      <td>1.305461e+04</td>
+      <td>3.904389e+04</td>
+      <td>29.963187</td>
+      <td>74.942454</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>Indonesia</td>
+      <td>2257604.3</td>
+      <td>Indonesia</td>
+      <td>1.188195e+06</td>
+      <td>1.069409e+06</td>
+      <td>15.517575</td>
+      <td>47.369198</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>India</td>
+      <td>4621416.8</td>
+      <td>India</td>
+      <td>7.599764e+06</td>
+      <td>-2.978347e+06</td>
+      <td>12.185184</td>
+      <td>-64.446615</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>96103.4</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>9.600254e+04</td>
+      <td>1.008569e+02</td>
+      <td>0.026250</td>
+      <td>0.104946</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>110895.1</td>
+      <td>Italy</td>
+      <td>5.101547e+04</td>
+      <td>5.987963e+04</td>
+      <td>18.491575</td>
+      <td>53.996641</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>Japan</td>
+      <td>320581.8</td>
+      <td>Japan</td>
+      <td>2.835167e+05</td>
+      <td>3.706513e+04</td>
+      <td>3.067805</td>
+      <td>11.561831</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>Cambodia</td>
+      <td>468378.9</td>
+      <td>Cambodia</td>
+      <td>6.412802e+05</td>
+      <td>-1.729013e+05</td>
+      <td>7.790740</td>
+      <td>-36.914836</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>Republic of Korea</td>
+      <td>153260.9</td>
+      <td>Korea (the Republic of)</td>
+      <td>1.165467e+05</td>
+      <td>3.671416e+04</td>
+      <td>6.803765</td>
+      <td>23.955330</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>Lao People's Democratic Republic</td>
+      <td>77005.5</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>2.136270e+04</td>
+      <td>5.564280e+04</td>
+      <td>28.282917</td>
+      <td>72.258210</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>Sri Lanka</td>
+      <td>102156.3</td>
+      <td>Sri Lanka</td>
+      <td>9.248238e+04</td>
+      <td>9.673917e+03</td>
+      <td>2.485096</td>
+      <td>9.469721</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>Myanmar</td>
+      <td>1083100.3</td>
+      <td>Myanmar</td>
+      <td>1.221904e+06</td>
+      <td>-1.388038e+05</td>
+      <td>3.010923</td>
+      <td>-12.815417</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>Malaysia</td>
+      <td>122453.8</td>
+      <td>Malaysia</td>
+      <td>1.127141e+05</td>
+      <td>9.739707e+03</td>
+      <td>2.070799</td>
+      <td>7.953781</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>Nepal</td>
+      <td>156215.4</td>
+      <td>Nepal</td>
+      <td>7.168401e+04</td>
+      <td>8.453139e+04</td>
+      <td>18.545767</td>
+      <td>54.112071</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>Pakistan</td>
+      <td>424755.1</td>
+      <td>Pakistan</td>
+      <td>6.401201e+05</td>
+      <td>-2.153650e+05</td>
+      <td>10.112219</td>
+      <td>-50.703341</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>Philippines</td>
+      <td>1556225.8</td>
+      <td>Philippines (the)</td>
+      <td>4.462836e+05</td>
+      <td>1.109942e+06</td>
+      <td>27.713784</td>
+      <td>71.322699</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>Democratic People's Republic of Korea</td>
+      <td>82937.0</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>8.581038e+04</td>
+      <td>-2.873381e+03</td>
+      <td>0.851385</td>
+      <td>-3.464534</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>Thailand</td>
+      <td>1553835.5</td>
+      <td>Thailand</td>
+      <td>1.520788e+06</td>
+      <td>3.304738e+04</td>
+      <td>0.537422</td>
+      <td>2.126826</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>China, Taiwan Province of</td>
+      <td>49152.0</td>
+      <td>Taiwan (Province of China)</td>
+      <td>8.333327e+04</td>
+      <td>-3.418127e+04</td>
+      <td>12.900027</td>
+      <td>-69.541975</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>United States of America</td>
+      <td>350136.5</td>
+      <td>United States of America (the)</td>
+      <td>1.941455e+05</td>
+      <td>1.559910e+05</td>
+      <td>14.329984</td>
+      <td>44.551492</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>Viet Nam</td>
+      <td>1318431.1</td>
+      <td>Viet Nam</td>
+      <td>1.374450e+06</td>
+      <td>-5.601846e+04</td>
+      <td>1.040122</td>
+      <td>-4.248873</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>23446028.9</td>
+      <td>Total</td>
+      <td>2.485387e+07</td>
+      <td>-1.407846e+06</td>
+      <td>1.457400</td>
+      <td>-6.004623</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="tonnes-ch4-faostat-trace-plot">
+<h3>Tonnes CH4 FAOSTAT - TRACE Plot<a class="headerlink" href="#tonnes-ch4-faostat-trace-plot" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;barh&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;country_fao&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;diff_2020&quot;</span><span class="p">],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Country Name&quot;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Tonnes CH4&quot;</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Country Name&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/replicating_paper_21_1.png" src="../_images/replicating_paper_21_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="percent-difference-faostat-trace">
+<h3>Percent Difference FAOSTAT - TRACE<a class="headerlink" href="#percent-difference-faostat-trace" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;barh&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;country_fao&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;relative_percent_diff_2020&quot;</span><span class="p">],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Country Name&quot;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Tonnes CH4&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Country Name&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/replicating_paper_23_1.png" src="../_images/replicating_paper_23_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="recreating-the-malysia-paper-with-2018-data">
+<h2>Recreating the Malysia Paper with 2018 Data.<a class="headerlink" href="#recreating-the-malysia-paper-with-2018-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>University of Malaysia Data<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/jnapolitano/Projects/wattime-takehome/data/ch4_2015-2021.xlsx&quot;</span>
+
+<span class="n">malaysia_emissions_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Selecting 2020 columns</span>
+<span class="n">malaysia_2020</span> <span class="o">=</span> <span class="n">malaysia_emissions_df</span><span class="p">[[</span><span class="s2">&quot;iso3_country&quot;</span><span class="p">,</span><span class="s2">&quot;country_name&quot;</span><span class="p">,</span> <span class="s2">&quot;tCH4_2020&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">malaysia_2020</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso3_country</th>
+      <th>country_name</th>
+      <th>tCH4_2020</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>2.106781e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>4.902874e+05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>6.402353e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>1.305461e+04</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>1.188195e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>7.599764e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>9.600254e+04</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>5.101547e+04</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>2.835167e+05</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>6.412802e+05</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>1.165467e+05</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>2.136270e+04</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>9.248238e+04</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>1.221904e+06</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>1.127141e+05</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>7.168401e+04</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>6.401201e+05</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>4.462836e+05</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>8.581038e+04</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>1.520788e+06</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>8.333327e+04</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>1.941455e+05</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>1.374450e+06</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>2.485387e+07</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="faostat-data-2018">
+<h2>FAOSTAT Data 2018<a class="headerlink" href="#faostat-data-2018" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/jnapolitano/Projects/wattime-takehome/data/emissions_csv_fao_emiss_csv_ch4_fao_2015_2019_tonnes.xlsx&quot;</span>
+
+<span class="n">faostat_emissions_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faostat_2018</span> <span class="o">=</span> <span class="n">faostat_emissions_df</span><span class="p">[[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;country_fao&#39;</span><span class="p">,</span> <span class="mi">2018</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faostat_2018</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>code</th>
+      <th>country</th>
+      <th>country_fao</th>
+      <th>2018</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>Bangladesh</td>
+      <td>1144591.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>121615.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>China, mainland</td>
+      <td>5302173.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>52925.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>Indonesia</td>
+      <td>2405613.8</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>India</td>
+      <td>4661154.9</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>93936.6</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>109463.8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>Japan</td>
+      <td>322245.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>Cambodia</td>
+      <td>479362.7</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>Republic of Korea</td>
+      <td>154911.3</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>Lao People's Democratic Republic</td>
+      <td>83333.6</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>Sri Lanka</td>
+      <td>111049.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>Myanmar</td>
+      <td>1118850.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>Malaysia</td>
+      <td>125238.5</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>Nepal</td>
+      <td>153890.8</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>Pakistan</td>
+      <td>393404.2</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>Philippines</td>
+      <td>1606047.8</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>Democratic People's Republic of Korea</td>
+      <td>83943.3</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>Thailand</td>
+      <td>1702989.1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>China, Taiwan Province of</td>
+      <td>49414.1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>United States of America</td>
+      <td>412177.5</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>Viet Nam</td>
+      <td>1336231.2</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>24042561.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faostat_2018</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;iso3_country&quot;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Merging Data on Iso3 Country Code<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span> <span class="o">=</span> <span class="n">faostat_2018</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">malaysia_2020</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;iso3_country&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso3_country</th>
+      <th>country</th>
+      <th>country_fao</th>
+      <th>2018</th>
+      <th>country_name</th>
+      <th>tCH4_2020</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>Bangladesh</td>
+      <td>1144591.0</td>
+      <td>Bangladesh</td>
+      <td>2.106781e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>121615.2</td>
+      <td>Brazil</td>
+      <td>4.902874e+05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>China, mainland</td>
+      <td>5302173.1</td>
+      <td>China</td>
+      <td>6.402353e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>52925.0</td>
+      <td>Spain</td>
+      <td>1.305461e+04</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>Indonesia</td>
+      <td>2405613.8</td>
+      <td>Indonesia</td>
+      <td>1.188195e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>India</td>
+      <td>4661154.9</td>
+      <td>India</td>
+      <td>7.599764e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>93936.6</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>9.600254e+04</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>109463.8</td>
+      <td>Italy</td>
+      <td>5.101547e+04</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>Japan</td>
+      <td>322245.0</td>
+      <td>Japan</td>
+      <td>2.835167e+05</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>Cambodia</td>
+      <td>479362.7</td>
+      <td>Cambodia</td>
+      <td>6.412802e+05</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>Republic of Korea</td>
+      <td>154911.3</td>
+      <td>Korea (the Republic of)</td>
+      <td>1.165467e+05</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>Lao People's Democratic Republic</td>
+      <td>83333.6</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>2.136270e+04</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>Sri Lanka</td>
+      <td>111049.0</td>
+      <td>Sri Lanka</td>
+      <td>9.248238e+04</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>Myanmar</td>
+      <td>1118850.0</td>
+      <td>Myanmar</td>
+      <td>1.221904e+06</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>Malaysia</td>
+      <td>125238.5</td>
+      <td>Malaysia</td>
+      <td>1.127141e+05</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>Nepal</td>
+      <td>153890.8</td>
+      <td>Nepal</td>
+      <td>7.168401e+04</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>Pakistan</td>
+      <td>393404.2</td>
+      <td>Pakistan</td>
+      <td>6.401201e+05</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>Philippines</td>
+      <td>1606047.8</td>
+      <td>Philippines (the)</td>
+      <td>4.462836e+05</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>Democratic People's Republic of Korea</td>
+      <td>83943.3</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>8.581038e+04</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>Thailand</td>
+      <td>1702989.1</td>
+      <td>Thailand</td>
+      <td>1.520788e+06</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>China, Taiwan Province of</td>
+      <td>49414.1</td>
+      <td>Taiwan (Province of China)</td>
+      <td>8.333327e+04</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>United States of America</td>
+      <td>412177.5</td>
+      <td>United States of America (the)</td>
+      <td>1.941455e+05</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>Viet Nam</td>
+      <td>1336231.2</td>
+      <td>Viet Nam</td>
+      <td>1.374450e+06</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>24042561.5</td>
+      <td>Total</td>
+      <td>2.485387e+07</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Calculate difference in Tonnes Between the Estimates<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate Difference in tons</span>
+<span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;diff_2020&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged2020_df</span><span class="p">[</span><span class="mi">2018</span><span class="p">]</span> <span class="o">-</span> <span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2020&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Calculating the Percent Differences Between the Estimates<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;abs_percent_diff_2020&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">merged2020_df</span><span class="p">[</span><span class="mi">2018</span><span class="p">]</span> <span class="o">-</span> <span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2020&#39;</span><span class="p">]))</span><span class="o">/</span><span class="p">(</span><span class="n">merged2020_df</span><span class="p">[</span><span class="mi">2018</span><span class="p">]</span> <span class="o">+</span> <span class="n">merged2020_df</span><span class="p">[</span><span class="s2">&quot;tCH4_2020&quot;</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+
+<span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;relative_percent_diff_2020&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">merged2020_df</span><span class="p">[</span><span class="mi">2018</span><span class="p">]</span> <span class="o">-</span> <span class="n">merged2020_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2020&#39;</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">merged2020_df</span><span class="p">[</span><span class="mi">2018</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso3_country</th>
+      <th>country</th>
+      <th>country_fao</th>
+      <th>2018</th>
+      <th>country_name</th>
+      <th>tCH4_2020</th>
+      <th>diff_2020</th>
+      <th>abs_percent_diff_2020</th>
+      <th>relative_percent_diff_2020</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>Bangladesh</td>
+      <td>1144591.0</td>
+      <td>Bangladesh</td>
+      <td>2.106781e+06</td>
+      <td>-9.621904e+05</td>
+      <td>14.796680</td>
+      <td>-84.064120</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>121615.2</td>
+      <td>Brazil</td>
+      <td>4.902874e+05</td>
+      <td>-3.686722e+05</td>
+      <td>30.125073</td>
+      <td>-303.146497</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>China, mainland</td>
+      <td>5302173.1</td>
+      <td>China</td>
+      <td>6.402353e+06</td>
+      <td>-1.100180e+06</td>
+      <td>4.699806</td>
+      <td>-20.749605</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>52925.0</td>
+      <td>Spain</td>
+      <td>1.305461e+04</td>
+      <td>3.987039e+04</td>
+      <td>30.214181</td>
+      <td>75.333763</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>Indonesia</td>
+      <td>2405613.8</td>
+      <td>Indonesia</td>
+      <td>1.188195e+06</td>
+      <td>1.217419e+06</td>
+      <td>16.937719</td>
+      <td>50.607398</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>India</td>
+      <td>4661154.9</td>
+      <td>India</td>
+      <td>7.599764e+06</td>
+      <td>-2.938609e+06</td>
+      <td>11.983640</td>
+      <td>-63.044646</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>93936.6</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>9.600254e+04</td>
+      <td>-2.065943e+03</td>
+      <td>0.543843</td>
+      <td>-2.199295</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>109463.8</td>
+      <td>Italy</td>
+      <td>5.101547e+04</td>
+      <td>5.844833e+04</td>
+      <td>18.210554</td>
+      <td>53.395122</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>Japan</td>
+      <td>322245.0</td>
+      <td>Japan</td>
+      <td>2.835167e+05</td>
+      <td>3.872833e+04</td>
+      <td>3.196664</td>
+      <td>12.018286</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>Cambodia</td>
+      <td>479362.7</td>
+      <td>Cambodia</td>
+      <td>6.412802e+05</td>
+      <td>-1.619175e+05</td>
+      <td>7.224313</td>
+      <td>-33.777660</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>Republic of Korea</td>
+      <td>154911.3</td>
+      <td>Korea (the Republic of)</td>
+      <td>1.165467e+05</td>
+      <td>3.836456e+04</td>
+      <td>7.066388</td>
+      <td>24.765498</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>Lao People's Democratic Republic</td>
+      <td>83333.6</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>2.136270e+04</td>
+      <td>6.197090e+04</td>
+      <td>29.595551</td>
+      <td>74.364837</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>Sri Lanka</td>
+      <td>111049.0</td>
+      <td>Sri Lanka</td>
+      <td>9.248238e+04</td>
+      <td>1.856662e+04</td>
+      <td>4.561119</td>
+      <td>16.719301</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>Myanmar</td>
+      <td>1118850.0</td>
+      <td>Myanmar</td>
+      <td>1.221904e+06</td>
+      <td>-1.030541e+05</td>
+      <td>2.201302</td>
+      <td>-9.210718</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>Malaysia</td>
+      <td>125238.5</td>
+      <td>Malaysia</td>
+      <td>1.127141e+05</td>
+      <td>1.252441e+04</td>
+      <td>2.631702</td>
+      <td>10.000444</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>Nepal</td>
+      <td>153890.8</td>
+      <td>Nepal</td>
+      <td>7.168401e+04</td>
+      <td>8.220679e+04</td>
+      <td>18.221624</td>
+      <td>53.418910</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>Pakistan</td>
+      <td>393404.2</td>
+      <td>Pakistan</td>
+      <td>6.401201e+05</td>
+      <td>-2.467159e+05</td>
+      <td>11.935661</td>
+      <td>-62.713090</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>Philippines</td>
+      <td>1606047.8</td>
+      <td>Philippines (the)</td>
+      <td>4.462836e+05</td>
+      <td>1.159764e+06</td>
+      <td>28.254800</td>
+      <td>72.212312</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>Democratic People's Republic of Korea</td>
+      <td>83943.3</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>8.581038e+04</td>
+      <td>-1.867081e+03</td>
+      <td>0.549938</td>
+      <td>-2.224216</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>Thailand</td>
+      <td>1702989.1</td>
+      <td>Thailand</td>
+      <td>1.520788e+06</td>
+      <td>1.822010e+05</td>
+      <td>2.825893</td>
+      <td>10.698893</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>China, Taiwan Province of</td>
+      <td>49414.1</td>
+      <td>Taiwan (Province of China)</td>
+      <td>8.333327e+04</td>
+      <td>-3.391917e+04</td>
+      <td>12.775835</td>
+      <td>-68.642698</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>United States of America</td>
+      <td>412177.5</td>
+      <td>United States of America (the)</td>
+      <td>1.941455e+05</td>
+      <td>2.180320e+05</td>
+      <td>17.979860</td>
+      <td>52.897608</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>Viet Nam</td>
+      <td>1336231.2</td>
+      <td>Viet Nam</td>
+      <td>1.374450e+06</td>
+      <td>-3.821836e+04</td>
+      <td>0.704959</td>
+      <td>-2.860161</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>24042561.5</td>
+      <td>Total</td>
+      <td>2.485387e+07</td>
+      <td>-8.113131e+05</td>
+      <td>0.829624</td>
+      <td>-3.374487</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Tonnes CH4 FAOSTAT - TRACE Plot<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;barh&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;country_fao&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;diff_2020&quot;</span><span class="p">],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Country Name&quot;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Tonnes CH4&quot;</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Country Name&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/replicating_paper_43_1.png" src="../_images/replicating_paper_43_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Percent Difference FAOSTAT - TRACE<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2020_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;barh&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;country_fao&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;relative_percent_diff_2020&quot;</span><span class="p">],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Country Name&quot;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Tonnes CH4&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Country Name&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/replicating_paper_45_1.png" src="../_images/replicating_paper_45_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="recreating-the-malysia-paper-same-year">
+<h2>Recreating the Malysia Paper same year<a class="headerlink" href="#recreating-the-malysia-paper-same-year" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>University of Malaysia Data<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/jnapolitano/Projects/wattime-takehome/data/ch4_2015-2021.xlsx&quot;</span>
+
+<span class="n">malaysia_emissions_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Selecting 2020 columns</span>
+<span class="n">malaysia_2018</span> <span class="o">=</span> <span class="n">malaysia_emissions_df</span><span class="p">[[</span><span class="s2">&quot;iso3_country&quot;</span><span class="p">,</span><span class="s2">&quot;country_name&quot;</span><span class="p">,</span> <span class="s2">&quot;tCH4_2018&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">malaysia_2018</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso3_country</th>
+      <th>country_name</th>
+      <th>tCH4_2018</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>2.141231e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>3.717030e+05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>5.413962e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>1.405410e+04</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>1.176982e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>6.589798e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>8.875744e+04</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>4.469902e+04</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>1.548252e+05</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>5.592610e+05</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>1.293543e+05</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>1.009675e+04</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>9.018914e+04</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>1.372447e+06</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>1.066525e+05</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>9.200752e+04</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>4.532297e+05</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>4.175210e+05</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>8.662578e+04</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>9.166575e+05</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>8.138151e+04</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>1.657254e+05</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>1.317455e+06</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>2.179462e+07</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>FAOSTAT Data 2018<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;/Users/jnapolitano/Projects/wattime-takehome/data/emissions_csv_fao_emiss_csv_ch4_fao_2015_2019_tonnes.xlsx&quot;</span>
+
+<span class="n">faostat_emissions_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faostat_2018</span> <span class="o">=</span> <span class="n">faostat_emissions_df</span><span class="p">[[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;country_fao&#39;</span><span class="p">,</span> <span class="mi">2018</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faostat_2018</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>code</th>
+      <th>country</th>
+      <th>country_fao</th>
+      <th>2018</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>Bangladesh</td>
+      <td>1144591.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>121615.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>China, mainland</td>
+      <td>5302173.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>52925.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>Indonesia</td>
+      <td>2405613.8</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>India</td>
+      <td>4661154.9</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>93936.6</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>109463.8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>Japan</td>
+      <td>322245.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>Cambodia</td>
+      <td>479362.7</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>Republic of Korea</td>
+      <td>154911.3</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>Lao People's Democratic Republic</td>
+      <td>83333.6</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>Sri Lanka</td>
+      <td>111049.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>Myanmar</td>
+      <td>1118850.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>Malaysia</td>
+      <td>125238.5</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>Nepal</td>
+      <td>153890.8</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>Pakistan</td>
+      <td>393404.2</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>Philippines</td>
+      <td>1606047.8</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>Democratic People's Republic of Korea</td>
+      <td>83943.3</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>Thailand</td>
+      <td>1702989.1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>China, Taiwan Province of</td>
+      <td>49414.1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>United States of America</td>
+      <td>412177.5</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>Viet Nam</td>
+      <td>1336231.2</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>24042561.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faostat_2018</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;iso3_country&quot;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>Merging Data on Iso3 Country Code<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2018_df</span> <span class="o">=</span> <span class="n">faostat_2018</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">malaysia_2018</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;iso3_country&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2018_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso3_country</th>
+      <th>country</th>
+      <th>country_fao</th>
+      <th>2018</th>
+      <th>country_name</th>
+      <th>tCH4_2018</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>Bangladesh</td>
+      <td>1144591.0</td>
+      <td>Bangladesh</td>
+      <td>2.141231e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>121615.2</td>
+      <td>Brazil</td>
+      <td>3.717030e+05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>China, mainland</td>
+      <td>5302173.1</td>
+      <td>China</td>
+      <td>5.413962e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>52925.0</td>
+      <td>Spain</td>
+      <td>1.405410e+04</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>Indonesia</td>
+      <td>2405613.8</td>
+      <td>Indonesia</td>
+      <td>1.176982e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>India</td>
+      <td>4661154.9</td>
+      <td>India</td>
+      <td>6.589798e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>93936.6</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>8.875744e+04</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>109463.8</td>
+      <td>Italy</td>
+      <td>4.469902e+04</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>Japan</td>
+      <td>322245.0</td>
+      <td>Japan</td>
+      <td>1.548252e+05</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>Cambodia</td>
+      <td>479362.7</td>
+      <td>Cambodia</td>
+      <td>5.592610e+05</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>Republic of Korea</td>
+      <td>154911.3</td>
+      <td>Korea (the Republic of)</td>
+      <td>1.293543e+05</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>Lao People's Democratic Republic</td>
+      <td>83333.6</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>1.009675e+04</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>Sri Lanka</td>
+      <td>111049.0</td>
+      <td>Sri Lanka</td>
+      <td>9.018914e+04</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>Myanmar</td>
+      <td>1118850.0</td>
+      <td>Myanmar</td>
+      <td>1.372447e+06</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>Malaysia</td>
+      <td>125238.5</td>
+      <td>Malaysia</td>
+      <td>1.066525e+05</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>Nepal</td>
+      <td>153890.8</td>
+      <td>Nepal</td>
+      <td>9.200752e+04</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>Pakistan</td>
+      <td>393404.2</td>
+      <td>Pakistan</td>
+      <td>4.532297e+05</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>Philippines</td>
+      <td>1606047.8</td>
+      <td>Philippines (the)</td>
+      <td>4.175210e+05</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>Democratic People's Republic of Korea</td>
+      <td>83943.3</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>8.662578e+04</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>Thailand</td>
+      <td>1702989.1</td>
+      <td>Thailand</td>
+      <td>9.166575e+05</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>China, Taiwan Province of</td>
+      <td>49414.1</td>
+      <td>Taiwan (Province of China)</td>
+      <td>8.138151e+04</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>United States of America</td>
+      <td>412177.5</td>
+      <td>United States of America (the)</td>
+      <td>1.657254e+05</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>Viet Nam</td>
+      <td>1336231.2</td>
+      <td>Viet Nam</td>
+      <td>1.317455e+06</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>24042561.5</td>
+      <td>Total</td>
+      <td>2.179462e+07</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>Calculate difference in Tonnes Between the Estimates<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate Difference in tons</span>
+<span class="n">merged2018_df</span><span class="p">[</span><span class="s1">&#39;diff_2018&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged2018_df</span><span class="p">[</span><span class="mi">2018</span><span class="p">]</span> <span class="o">-</span> <span class="n">merged2018_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2018&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>Calculating the Percent Differences Between the Estimates<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2018_df</span><span class="p">[</span><span class="s1">&#39;abs_percent_diff_2018&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">abs</span><span class="p">((</span><span class="n">merged2018_df</span><span class="p">[</span><span class="mi">2018</span><span class="p">]</span> <span class="o">-</span> <span class="n">merged2018_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2018&#39;</span><span class="p">]))</span><span class="o">/</span><span class="p">(</span><span class="n">merged2018_df</span><span class="p">[</span><span class="mi">2018</span><span class="p">]</span> <span class="o">+</span> <span class="n">merged2018_df</span><span class="p">[</span><span class="s2">&quot;tCH4_2018&quot;</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+
+<span class="n">merged2018_df</span><span class="p">[</span><span class="s1">&#39;relative_percent_diff_2018&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">merged2018_df</span><span class="p">[</span><span class="mi">2018</span><span class="p">]</span> <span class="o">-</span> <span class="n">merged2018_df</span><span class="p">[</span><span class="s1">&#39;tCH4_2018&#39;</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">merged2018_df</span><span class="p">[</span><span class="mi">2018</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2018_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso3_country</th>
+      <th>country</th>
+      <th>country_fao</th>
+      <th>2018</th>
+      <th>country_name</th>
+      <th>tCH4_2018</th>
+      <th>diff_2018</th>
+      <th>abs_percent_diff_2018</th>
+      <th>relative_percent_diff_2018</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BGD</td>
+      <td>Bangladesh</td>
+      <td>Bangladesh</td>
+      <td>1144591.0</td>
+      <td>Bangladesh</td>
+      <td>2.141231e+06</td>
+      <td>-9.966395e+05</td>
+      <td>15.165759</td>
+      <td>-87.073857</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRA</td>
+      <td>Brazil</td>
+      <td>Brazil</td>
+      <td>121615.2</td>
+      <td>Brazil</td>
+      <td>3.717030e+05</td>
+      <td>-2.500878e+05</td>
+      <td>25.347513</td>
+      <td>-205.638590</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CHN</td>
+      <td>China</td>
+      <td>China, mainland</td>
+      <td>5302173.1</td>
+      <td>China</td>
+      <td>5.413962e+06</td>
+      <td>-1.117892e+05</td>
+      <td>0.521593</td>
+      <td>-2.108366</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ESP</td>
+      <td>Spain</td>
+      <td>Spain</td>
+      <td>52925.0</td>
+      <td>Spain</td>
+      <td>1.405410e+04</td>
+      <td>3.887090e+04</td>
+      <td>29.017189</td>
+      <td>73.445258</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>IDN</td>
+      <td>Indonesia</td>
+      <td>Indonesia</td>
+      <td>2405613.8</td>
+      <td>Indonesia</td>
+      <td>1.176982e+06</td>
+      <td>1.228632e+06</td>
+      <td>17.147238</td>
+      <td>51.073546</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>IND</td>
+      <td>India</td>
+      <td>India</td>
+      <td>4661154.9</td>
+      <td>India</td>
+      <td>6.589798e+06</td>
+      <td>-1.928643e+06</td>
+      <td>8.571022</td>
+      <td>-41.376939</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>IRN</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>93936.6</td>
+      <td>Iran (Islamic Republic of)</td>
+      <td>8.875744e+04</td>
+      <td>5.179159e+03</td>
+      <td>1.417441</td>
+      <td>5.513463</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ITA</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>109463.8</td>
+      <td>Italy</td>
+      <td>4.469902e+04</td>
+      <td>6.476478e+04</td>
+      <td>21.005319</td>
+      <td>59.165480</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>JPN</td>
+      <td>Japan</td>
+      <td>Japan</td>
+      <td>322245.0</td>
+      <td>Japan</td>
+      <td>1.548252e+05</td>
+      <td>1.674198e+05</td>
+      <td>17.546657</td>
+      <td>51.954183</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>KHM</td>
+      <td>Cambodia</td>
+      <td>Cambodia</td>
+      <td>479362.7</td>
+      <td>Cambodia</td>
+      <td>5.592610e+05</td>
+      <td>-7.989830e+04</td>
+      <td>3.846355</td>
+      <td>-16.667610</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KOR</td>
+      <td>Korea (the Republic of)</td>
+      <td>Republic of Korea</td>
+      <td>154911.3</td>
+      <td>Korea (the Republic of)</td>
+      <td>1.293543e+05</td>
+      <td>2.555698e+04</td>
+      <td>4.495264</td>
+      <td>16.497815</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LAO</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>Lao People's Democratic Republic</td>
+      <td>83333.6</td>
+      <td>Lao People's Democratic Republic (the)</td>
+      <td>1.009675e+04</td>
+      <td>7.323685e+04</td>
+      <td>39.193291</td>
+      <td>87.883944</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LKA</td>
+      <td>Sri Lanka</td>
+      <td>Sri Lanka</td>
+      <td>111049.0</td>
+      <td>Sri Lanka</td>
+      <td>9.018914e+04</td>
+      <td>2.085986e+04</td>
+      <td>5.182880</td>
+      <td>18.784377</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MMR</td>
+      <td>Myanmar</td>
+      <td>Myanmar</td>
+      <td>1118850.0</td>
+      <td>Myanmar</td>
+      <td>1.372447e+06</td>
+      <td>-2.535969e+05</td>
+      <td>5.089656</td>
+      <td>-22.665852</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYS</td>
+      <td>Malaysia</td>
+      <td>Malaysia</td>
+      <td>125238.5</td>
+      <td>Malaysia</td>
+      <td>1.066525e+05</td>
+      <td>1.858597e+04</td>
+      <td>4.007480</td>
+      <td>14.840462</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NPL</td>
+      <td>Nepal</td>
+      <td>Nepal</td>
+      <td>153890.8</td>
+      <td>Nepal</td>
+      <td>9.200752e+04</td>
+      <td>6.188328e+04</td>
+      <td>12.583102</td>
+      <td>40.212459</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PAK</td>
+      <td>Pakistan</td>
+      <td>Pakistan</td>
+      <td>393404.2</td>
+      <td>Pakistan</td>
+      <td>4.532297e+05</td>
+      <td>-5.982552e+04</td>
+      <td>3.533140</td>
+      <td>-15.207139</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHL</td>
+      <td>Philippines (the)</td>
+      <td>Philippines</td>
+      <td>1606047.8</td>
+      <td>Philippines (the)</td>
+      <td>4.175210e+05</td>
+      <td>1.188527e+06</td>
+      <td>29.367095</td>
+      <td>74.003201</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PRK</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>Democratic People's Republic of Korea</td>
+      <td>83943.3</td>
+      <td>Korea (the Democratic People's Republic of)</td>
+      <td>8.662578e+04</td>
+      <td>-2.682481e+03</td>
+      <td>0.786333</td>
+      <td>-3.195586</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>THA</td>
+      <td>Thailand</td>
+      <td>Thailand</td>
+      <td>1702989.1</td>
+      <td>Thailand</td>
+      <td>9.166575e+05</td>
+      <td>7.863316e+05</td>
+      <td>15.008352</td>
+      <td>46.173612</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>TWN</td>
+      <td>Taiwan (Province of China)</td>
+      <td>China, Taiwan Province of</td>
+      <td>49414.1</td>
+      <td>Taiwan (Province of China)</td>
+      <td>8.138151e+04</td>
+      <td>-3.196741e+04</td>
+      <td>12.220368</td>
+      <td>-64.692890</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USA</td>
+      <td>United States of America (the)</td>
+      <td>United States of America</td>
+      <td>412177.5</td>
+      <td>United States of America (the)</td>
+      <td>1.657254e+05</td>
+      <td>2.464521e+05</td>
+      <td>21.322962</td>
+      <td>59.792699</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VNM</td>
+      <td>Viet Nam</td>
+      <td>Viet Nam</td>
+      <td>1336231.2</td>
+      <td>Viet Nam</td>
+      <td>1.317455e+06</td>
+      <td>1.877621e+04</td>
+      <td>0.353776</td>
+      <td>1.405162</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Total</td>
+      <td>24042561.5</td>
+      <td>Total</td>
+      <td>2.179462e+07</td>
+      <td>2.247946e+06</td>
+      <td>2.452099</td>
+      <td>9.349861</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>Tonnes CH4 FAOSTAT - TRACE Plot<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2018_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;barh&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;country_fao&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;diff_2018&quot;</span><span class="p">],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Country Name&quot;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Tonnes CH4&quot;</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Country Name&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/replicating_paper_65_1.png" src="../_images/replicating_paper_65_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>Percent Difference FAOSTAT - TRACE<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged2018_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;barh&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;country_fao&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;relative_percent_diff_2018&quot;</span><span class="p">],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Country Name&quot;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Tonnes CH4&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Country Name&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/replicating_paper_67_1.png" src="../_images/replicating_paper_67_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="impressions">
+<h2>Impressions<a class="headerlink" href="#impressions" title="Permalink to this headline">¶</a></h2>
+<p>I was not able to replicate the results exactly.  I reviewed the included paper to find that the university misleadingly rounded to three decimal places.  I did not manipulate the raw data.</p>
+<p>I found that the overall difference in reporting is only about 6 percent between 2019 and 2020.   The methodology is somewhat misleading as well, because when considering the previous 5 years of data demonstrated a consistent 3 percent difference.  When comparing the TRACE data to itself it does seem to show a significant increase between 2019 and 2020 emissions. I’ll test this next.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "venv"
+        },
+        kernelOptions: {
+            kernelName: "venv",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'venv'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="full_post.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Are We Undercounting Global Methane Emissions? (Code Example)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="testing_malaysian_paper.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hypothesis Testing the University of Malaysia Paper</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Justin Napolitano<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

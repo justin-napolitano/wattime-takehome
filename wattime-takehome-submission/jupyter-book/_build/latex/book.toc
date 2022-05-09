@@ -1,0 +1,132 @@
+\selectlanguage *{english}
+\contentsline {part}{I\hspace {1em}Blog Posts}{3}{part.1}%
+\contentsline {chapter}{\numberline {1}Are We Undercounting Global Methane Emissions? (No Code Example)}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}How are Rice Paddy Emissions Measured?}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Differences between FAOSTAT and TRACE Estimates.}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Data Review}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Methane Emissions Data 2015 \sphinxhyphen {} 2019}{6}{subsection.1.2.2}%
+\contentsline {subsubsection}{Methane Emissions Insights}{8}{subsubsection*.3}%
+\contentsline {subsection}{\numberline {1.2.3}Major Differences Between FAOSTAT and TRACE for Certain Countries}{9}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}FAOSTAT Under Estimation in Brazil China, India, and Bangledesh.}{10}{subsection.1.2.4}%
+\contentsline {section}{\numberline {1.3}The Case for Climate Trace Estimates}{10}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Estimating CO2 Equivalency}{10}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Tonnes C02 2015 \sphinxhyphen {} 2019 TRACE Estimations}{10}{subsection.1.4.1}%
+\contentsline {subsubsection}{CO2 Data Insights}{12}{subsubsection*.4}%
+\contentsline {subsubsection}{The Worst Offenders are the Most Dependent on Rice Cultivation}{13}{subsubsection*.5}%
+\contentsline {section}{\numberline {1.5}Conclusions}{14}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}FAOSTAT Likely Undercounts Emissions}{14}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Countries Should Attempt to Reduce Methane Emssions}{14}{subsection.1.5.2}%
+\contentsline {chapter}{\numberline {2}Are We Undercounting Global Methane Emissions? (Code Example)}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}How are Rice Paddy Emissions Measured?}{15}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Differences between FAOSTAT and TRACE Estimates.}{15}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Data Review}{16}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Methane Emissions Data 2015 \sphinxhyphen {} 2019}{16}{subsection.2.2.2}%
+\contentsline {subsubsection}{Methane Emissions Insights}{19}{subsubsection*.6}%
+\contentsline {subsection}{\numberline {2.2.3}Major Differences Between FAOSTAT and TRACE for Certain Countries}{20}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}FAOSTAT Under Estimation in Brazil China, India, and Bangledesh.}{20}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}The Case for Climate Trace Estimates}{20}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Estimating CO2 Equivalency}{21}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Tonnes C02 2015 \sphinxhyphen {} 2019 TRACE Estimations}{21}{subsection.2.4.1}%
+\contentsline {subsubsection}{CO2 Data Insights}{23}{subsubsection*.7}%
+\contentsline {subsubsection}{The Worst Offenders are the Most Dependent on Rice Cultivation}{24}{subsubsection*.8}%
+\contentsline {section}{\numberline {2.5}Conclusions}{25}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}FAOSTAT Likely Undercounts Emissions}{25}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Countries Should Attempt to Reduce Methane Emssions}{25}{subsection.2.5.2}%
+\contentsline {part}{II\hspace {1em}Analysis of The University of Malaysia Paper}{27}{part.2}%
+\contentsline {chapter}{\numberline {3}Replicating the University of Malysia Paper.}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Imports}{29}{section.3.1}%
+\contentsline {section}{\numberline {3.2}University of Malaysia Data}{29}{section.3.2}%
+\contentsline {section}{\numberline {3.3}FAOSTAT Data 2019}{30}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Merging Data on Iso3 Country Code}{31}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Calculate difference in Tonnes Between the Estimates}{33}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Calculating the Percent Differences Between the Estimates}{33}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Tonnes CH4 FAOSTAT \sphinxhyphen {} TRACE Plot}{35}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Percent Difference FAOSTAT \sphinxhyphen {} TRACE}{36}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Recreating the Malysia Paper with 2018 Data.}{36}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}University of Malaysia Data}{36}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}FAOSTAT Data 2018}{37}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Merging Data on Iso3 Country Code}{38}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Calculate difference in Tonnes Between the Estimates}{40}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Calculating the Percent Differences Between the Estimates}{40}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Tonnes CH4 FAOSTAT \sphinxhyphen {} TRACE Plot}{42}{subsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.6.5}Percent Difference FAOSTAT \sphinxhyphen {} TRACE}{43}{subsection.3.6.5}%
+\contentsline {section}{\numberline {3.7}Recreating the Malysia Paper same year}{44}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}University of Malaysia Data}{44}{subsection.3.7.1}%
+\contentsline {section}{\numberline {3.8}FAOSTAT Data 2018}{45}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Merging Data on Iso3 Country Code}{46}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Calculate difference in Tonnes Between the Estimates}{48}{subsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.8.3}Calculating the Percent Differences Between the Estimates}{48}{subsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.8.4}Tonnes CH4 FAOSTAT \sphinxhyphen {} TRACE Plot}{50}{subsection.3.8.4}%
+\contentsline {subsection}{\numberline {3.8.5}Percent Difference FAOSTAT \sphinxhyphen {} TRACE}{51}{subsection.3.8.5}%
+\contentsline {section}{\numberline {3.9}Impressions}{52}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Hypothesis Testing the University of Malaysia Paper}{53}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Claims}{53}{section.4.1}%
+\contentsline {section}{\numberline {4.2}What will be testing.}{53}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Data Import}{53}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Drop total row from the data}{54}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Test for Normality: Shapiro\sphinxhyphen {}Wilk}{55}{subsection.4.3.2}%
+\contentsline {subsubsection}{2019}{55}{subsubsection*.9}%
+\contentsline {paragraph}{Results}{56}{paragraph*.10}%
+\contentsline {subsubsection}{2020}{56}{subsubsection*.11}%
+\contentsline {paragraph}{Results}{56}{paragraph*.12}%
+\contentsline {subsection}{\numberline {4.3.3}Independence of Samples.}{57}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Distribution Similiarity}{57}{subsection.4.3.4}%
+\contentsline {subsubsection}{Mann\sphinxhyphen {}Whitney U Test}{57}{subsubsection*.13}%
+\contentsline {subsection}{\numberline {4.3.5}Kruskal Wallis test}{57}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Friedman Test}{57}{subsection.4.3.6}%
+\contentsline {subsubsection}{Results.}{58}{subsubsection*.14}%
+\contentsline {part}{III\hspace {1em}Data Exploration}{59}{part.3}%
+\contentsline {chapter}{\numberline {5}Emissions Estimation Data: A Comparison between FAOSTAT and University of Malysia Estimates}{61}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Import}{61}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Dependencies}{61}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Exploration Plan}{61}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Data Imports}{61}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Import Data Frames}{62}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Experiment with Plots for each Set}{62}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Calculate differences between the datasets}{62}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}University of Malaysia Emission Estimates}{62}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Print Df Head}{62}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Calculate Co2 Equivalency}{64}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Calculate Means}{64}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Calculate Means and Totals Across Rows}{66}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Write Data to File}{68}{subsection.5.3.5}%
+\contentsline {section}{\numberline {5.4}University of Malaysia Plots}{68}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}University of Malaysia Bar Plot}{68}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}University of Malaysia Density Plot}{69}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}FAOSTAT Data}{70}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Print FAOSTAT Data}{70}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Change code to iso3\_country}{71}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Set country\_name total to total}{73}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Drop Fao Country Code}{73}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}Calculate Co2 Equivalency}{74}{subsection.5.5.5}%
+\contentsline {subsection}{\numberline {5.5.6}Calculate Means}{74}{subsection.5.5.6}%
+\contentsline {subsection}{\numberline {5.5.7}Calculate Means and Totals Across Rows}{75}{subsection.5.5.7}%
+\contentsline {subsection}{\numberline {5.5.8}FAOSTAT Data to File}{77}{subsection.5.5.8}%
+\contentsline {section}{\numberline {5.6}FaoSTAT PLOTS}{77}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}FAOSTAT Hectare Estimates Bar Plot}{77}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}FAOSTAT Density Plot}{78}{subsection.5.6.2}%
+\contentsline {section}{\numberline {5.7}Join Df’s by ISO3 Country}{78}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Drop totals and means from the original df.}{78}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Dropping 2020 and 2021 from the data sets}{82}{subsection.5.7.2}%
+\contentsline {subsection}{\numberline {5.7.3}Calculate difference in Ch4 Tonnes Between the Estimates}{85}{subsection.5.7.3}%
+\contentsline {subsection}{\numberline {5.7.4}Calculate difference in C02 Tonnes Between the Estimates}{88}{subsection.5.7.4}%
+\contentsline {subsection}{\numberline {5.7.5}Calculating the CH4 Percent Differences Between the Estimates}{88}{subsection.5.7.5}%
+\contentsline {subsection}{\numberline {5.7.6}Calculate CO2 Differences}{89}{subsection.5.7.6}%
+\contentsline {subsection}{\numberline {5.7.7}Recalculate Means}{94}{subsection.5.7.7}%
+\contentsline {subsection}{\numberline {5.7.8}Recalculate Totals}{98}{subsection.5.7.8}%
+\contentsline {subsection}{\numberline {5.7.9}Merged Data to File}{102}{subsection.5.7.9}%
+\contentsline {subsection}{\numberline {5.7.10}CO2 Difference Plots}{102}{subsection.5.7.10}%
+\contentsline {subsection}{\numberline {5.7.11}Percent Difference Plot}{103}{subsection.5.7.11}%
+\contentsline {section}{\numberline {5.8}Impressions}{103}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Initial}{103}{subsection.5.8.1}%
+\contentsline {subsubsection}{Verified}{104}{subsubsection*.15}%
+\contentsline {chapter}{\numberline {6}Merging TRACE and FAOSTAT Data with Geographic Data for Mapping}{105}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Shape Data}{105}{section.6.1}%
+\contentsline {section}{\numberline {6.2}FAOSTAT DATA}{106}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}FAOSTAT Country Merge}{108}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}FAOSTAT Merge to File}{111}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}TRACE Data}{111}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}TRACE Country Merge}{113}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Trace Merge to File}{119}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}Merge GEO DATA}{119}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Merged Countries to File}{123}{subsection.6.4.1}%

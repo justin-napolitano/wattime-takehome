@@ -1,0 +1,18 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+parts:
+  - caption: Blog Posts
+    chapters:
+     - file: notebooks/hidden_post.ipynb
+     - file: notebooks/full_post.ipynb     
+  - caption: Analysis of The University of Malaysia Paper
+    chapters:
+    - file: notebooks/replicating_paper.ipynb
+    - file: notebooks/testing_malaysian_paper.ipynb
+  - caption: Data Exploration
+    chapters:
+    - file: notebooks/data_exploration.ipynb
+    - file: notebooks/geo_coding.ipynb

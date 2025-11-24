@@ -20,6 +20,14 @@ seoSecondaryKeywords:
   - jupyter book
   - statistical analysis
 seoOptimized: true
+topicFamily: datascience
+topicFamilyConfidence: 0.95
+topicFamilyNotes: >-
+  The post is primarily a technical data science project analyzing methane emissions using
+  statistical testing, data merging, geographic data, and reproducible notebooks. It fits the
+  'datascience' family best, given its focus on data analysis, ETL workflows, statistical tests,
+  geospatial data, and Python scripting. Although there is some automation for building the Jupyter
+  Book, the core content and purpose are data scientific analysis.
 ---
 
 # Technical Overview: Analysis of Global Methane Emissions from Rice Paddies
@@ -84,3 +92,4 @@ This automation supports reproducibility and ease of updating the report.
 ## Conclusion
 
 This project serves as a technical reference for analyzing methane emission discrepancies in rice paddy cultivation. It combines data science, geographic information systems, and statistical analysis within a reproducible Jupyter Book framework. The approach and code provide a foundation for further research, refinement, and potential policy impact assessment.
+

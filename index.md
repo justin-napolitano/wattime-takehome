@@ -1,12 +1,26 @@
 ---
-slug: "github-wattime-takehome"
-title: "wattime-takehome"
-repo: "justin-napolitano/wattime-takehome"
-githubUrl: "https://github.com/justin-napolitano/wattime-takehome"
-generatedAt: "2025-11-23T09:50:24.547994Z"
-source: "github-auto"
+slug: github-wattime-takehome
+title: Technical Analysis of Global Methane Emissions from Rice Paddies
+repo: justin-napolitano/wattime-takehome
+githubUrl: https://github.com/justin-napolitano/wattime-takehome
+generatedAt: '2025-11-23T09:50:24.547994Z'
+source: github-auto
+summary: >-
+  A reproducible data science project analyzing discrepancies in global methane emissions from rice
+  paddies using statistical tests and geographic data.
+tags:
+  - methane-emissions
+  - rice-paddies
+  - jupyter-book
+  - data-analysis
+  - statistical-testing
+seoPrimaryKeyword: methane emissions
+seoSecondaryKeywords:
+  - rice paddies
+  - jupyter book
+  - statistical analysis
+seoOptimized: true
 ---
-
 
 # Technical Overview: Analysis of Global Methane Emissions from Rice Paddies
 

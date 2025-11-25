@@ -1,33 +1,39 @@
 ---
 slug: github-wattime-takehome
-title: Technical Analysis of Global Methane Emissions from Rice Paddies
+title: Analyzing Global Methane Emissions from Rice Paddies
 repo: justin-napolitano/wattime-takehome
 githubUrl: https://github.com/justin-napolitano/wattime-takehome
 generatedAt: '2025-11-23T09:50:24.547994Z'
 source: github-auto
 summary: >-
-  A reproducible data science project analyzing discrepancies in global methane emissions from rice
-  paddies using statistical tests and geographic data.
+  This project analyzes methane emissions from rice paddies using various data
+  sources and statistical methods for accurate reporting.
 tags:
   - methane-emissions
   - rice-paddies
   - jupyter-book
   - data-analysis
   - statistical-testing
-seoPrimaryKeyword: methane emissions
+  - python
+seoPrimaryKeyword: methane emissions analysis
 seoSecondaryKeywords:
-  - rice paddies
-  - jupyter book
-  - statistical analysis
+  - rice paddies methane
+  - data merging techniques
+  - statistical methods for emissions
+  - Jupyter Book automation
+  - geospatial data analysis
 seoOptimized: true
 topicFamily: datascience
 topicFamilyConfidence: 0.95
 topicFamilyNotes: >-
-  The post is primarily a technical data science project analyzing methane emissions using
-  statistical testing, data merging, geographic data, and reproducible notebooks. It fits the
-  'datascience' family best, given its focus on data analysis, ETL workflows, statistical tests,
-  geospatial data, and Python scripting. Although there is some automation for building the Jupyter
+  The post is primarily a technical data science project analyzing methane
+  emissions using statistical testing, data merging, geographic data, and
+  reproducible notebooks. It fits the 'datascience' family best, given its focus
+  on data analysis, ETL workflows, statistical tests, geospatial data, and
+  Python scripting. Although there is some automation for building the Jupyter
   Book, the core content and purpose are data scientific analysis.
+kind: project
+id: github-wattime-takehome
 ---
 
 # Technical Overview: Analysis of Global Methane Emissions from Rice Paddies

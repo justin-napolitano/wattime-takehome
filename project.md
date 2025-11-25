@@ -1,20 +1,29 @@
 ---
 slug: github-wattime-takehome
 id: github-wattime-takehome
-title: wattime-takehome
+title: Analyzing Global Methane Emissions with Jupyter Book
 repo: justin-napolitano/wattime-takehome
 githubUrl: https://github.com/justin-napolitano/wattime-takehome
 generatedAt: '2025-11-24T21:36:47.406Z'
 source: github-auto
 summary: >-
-  This repository contains a Jupyter Book project analyzing global methane
-  emissions from rice paddies. The work compares estimation methodologies,
-  replicates academic studies, and explores geographic data integration to
-  better understand discrepancies in methane emission reporting.
-tags: []
-seoPrimaryKeyword: ''
-seoSecondaryKeywords: []
-seoOptimized: false
+  Explore a Jupyter Book project that analyzes global methane emissions from
+  rice paddies using various data sources and methodologies.
+tags:
+  - jupyter-book
+  - python
+  - geopandas
+  - git
+  - matplotlib
+  - faostat
+seoPrimaryKeyword: jupyter book methane emissions analysis
+seoSecondaryKeywords:
+  - methane emission datasets
+  - data visualization
+  - geographic data integration
+  - build automation
+  - academic replication studies
+seoOptimized: true
 topicFamily: null
 topicFamilyConfidence: null
 kind: project

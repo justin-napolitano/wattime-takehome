@@ -7,8 +7,8 @@ githubUrl: https://github.com/justin-napolitano/wattime-takehome
 generatedAt: '2025-11-24T21:36:47.406Z'
 source: github-auto
 summary: >-
-  Explore a Jupyter Book project that analyzes global methane emissions from
-  rice paddies using various data sources and methodologies.
+  Explore a Jupyter Book project that analyzes global methane emissions from rice paddies using
+  various data sources and methodologies.
 tags:
   - jupyter-book
   - python
@@ -24,8 +24,8 @@ seoSecondaryKeywords:
   - build automation
   - academic replication studies
 seoOptimized: true
-topicFamily: null
-topicFamilyConfidence: null
+topicFamily: datascience
+topicFamilyConfidence: 0.9
 kind: project
 entryLayout: project
 showInProjects: true
@@ -116,3 +116,4 @@ wattime-takehome/
 ---
 
 *Note: Some assumptions were made about missing documentation and project structure based on file contents and naming conventions.*
+
